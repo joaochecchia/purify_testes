@@ -3,7 +3,7 @@
 ---
 
 ### Ações de Controle (Autenticação e Segurança)
->`Responsável: Daniel Souza`
+>`Responsável: João Gabriel Brito Checchia`
 
 **1. Teste de Limite de Requisições (Força Bruta)**
 * **Descrição sucinta do teste:** Simulação de ataques de força bruta inserindo 10 senhas erradas no endpoint de login em menos de 1 minuto. O sistema deve validar o RF-11 retornando código *HTTP 429 Too Many Requests* ou bloqueando o IP temporariamente.
@@ -28,7 +28,7 @@
 ---
 
 ### Ações de Controle (Qualidade da Água e Alertas)
->`Responsável: João Gabriel Brito`
+>`Responsável: João Gabriel Brito Checchia`
 
 **6. Teste de Particionamento de pH**
 * **Descrição sucinta do teste:** Teste da interface e da API de registro de dados (RF-02). Inserção de valores de pH com particionamento de equivalência inválido: pH negativo (-1), pH = 0 (borda), pH = 14 (borda), pH > 14 (15). O formulário/API deve bloquear os valores inválidos.
@@ -53,7 +53,7 @@
 ---
 
 ### Ações de Controle (Notificações e Push)
->`Responsável: João Siqueira`
+>`Responsável: João Gabriel Brito Checchia`
 
 **11. Teste de Envio de Notificação Push Crítica**
 * **Descrição sucinta do teste:** Após inserção de dados críticos (pH = 5,0), verificação de que a notificação push foi efetivamente enviada ao serviço de mensageria (FCM/APNS) e recebida pelo dispositivo do usuário em até 30 segundos (RNF-013, RF-04).
@@ -70,7 +70,7 @@
 ---
 
 ### Ações de Controle (Reporte de Saneamento)
->`Responsável: Luan Ferreira`
+>`Responsável: João Gabriel Brito Checchia`
 
 **14. Teste de Obrigatoriedade de Localização GPS**
 * **Descrição sucinta do teste:** Tentativa de envio de reporte de saneamento sem localização via GPS e sem seleção manual no mapa. O sistema deve bloquear a submissão e exibir mensagem de erro (RN-007, RF-21).
@@ -87,7 +87,7 @@
 ---
 
 ### Ações de Controle (Histórico e Consulta Regional)
->`Responsável: Victor Davidson`
+>`Responsável: João Gabriel Brito Checchia`
 
 **17. Teste de Ordenação do Histórico**
 * **Descrição sucinta do teste:** Inserção de registros históricos com timestamps distintos (hoje, ontem, semana passada). Verificação de que a listagem retornada pela API e exibida na interface está em ordem decrescente (mais recente primeiro), conforme RN-005 e RF-09.
@@ -104,7 +104,7 @@
 ---
 
 ### Ações de Controle (Cadastro e Conta)
->`Responsável: Victor Madeu`
+>`Responsável: João Gabriel Brito Checchia`
 
 **20. Teste de Anonimização na Exclusão de Conta**
 * **Descrição sucinta do teste:** Exclusão de uma conta que possui reportes de saneamento associados. Verificação de que os dados pessoais (nome, e-mail, CPF/CNPJ, senha) foram apagados do banco e que os reportes foram mantidos com o campo `id_usuario` nulo (anonimizado), conforme RN-008 e a LGPD.

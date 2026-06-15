@@ -1,4 +1,4 @@
-`Responsável: João Siqueira`
+`Responsável: João Gabriel Brito Checchia`
 
 ## 1. Modelagem de Teste de API - Particionamento de Equivalência
 

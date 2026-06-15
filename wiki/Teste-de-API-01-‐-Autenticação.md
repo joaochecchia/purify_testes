@@ -1,4 +1,4 @@
-`Responsável: Daniel Souza`
+`Responsável: João Gabriel Brito Checchia`
 
 ## 1. Modelagem de Teste de API - Particionamento de Equivalência
 
@@ -59,7 +59,7 @@
     {
       "status": "sucesso",
       "token": "eyJhbGciOiJIUzI1NiIsIn...",
-      "usuario": "Daniel Souza",
+      "usuario": "João Gabriel",
       "perfil": "ONG"
     }
 
@@ -146,7 +146,7 @@
       {
           "status": "sucesso",
           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV...",
-          "usuario": "Daniel Souza",
+          "usuario": "João Gabriel",
           "perfil": "ONG"
       }
 

@@ -1,4 +1,4 @@
-**Responsável:** Luan Ferreira
+**Responsável:** João Gabriel Brito Checchia
 
 **Técnica:** Tabela de Decisão (DT)
 

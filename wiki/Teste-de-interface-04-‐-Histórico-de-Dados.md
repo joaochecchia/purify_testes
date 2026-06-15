@@ -1,4 +1,4 @@
-`Responsável: Victor Davidson`
+`Responsável: João Gabriel Brito Checchia`
 
 ## 1. Modelagem de Teste de Interface - Particionamento de Equivalência
 

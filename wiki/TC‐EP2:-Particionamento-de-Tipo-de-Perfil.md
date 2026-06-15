@@ -1,4 +1,4 @@
-**Responsável:** Victor Madeu
+**Responsável:** João Gabriel Brito Checchia
 
 **Técnica:** Partição de Equivalência (EP)
 

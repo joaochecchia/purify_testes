@@ -1,4 +1,4 @@
-`Responsável: Daniel Souza`
+`Responsável: João Gabriel Brito Checchia`
 
 ## 1. Modelagem de Teste de Interface - Tabela de Decisão
 

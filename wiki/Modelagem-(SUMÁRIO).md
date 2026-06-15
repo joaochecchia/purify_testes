@@ -3,7 +3,7 @@
 *Clique nos links abaixo para acessar a modelagem individual de cada teste.*
 
 ## 👨‍💻 Autenticação e Segurança
-`Responsável: Daniel Souza`
+`Responsável: João Gabriel Brito Checchia`
 * [[TC‐EP1: Particionamento de Autenticação de Usuário]]
 * [[TC‐EP2: Particionamento de Perfil de Acesso (RBAC)]]
 * [[TC‐BVA1: Bloqueio de Força Bruta no Login]]
@@ -12,7 +12,7 @@
 * [[TC‐DT2: Recuperação de Senha Segura]]
 
 ## 👨‍💻 Qualidade da Água e Alertas
-`Responsável: João Gabriel Brito`
+`Responsável: João Gabriel Brito Checchia`
 * [[TC‐EP1: Particionamento de Parâmetros de pH]]
 * [[TC‐EP2: Particionamento de Turbidez]]
 * [[TC‐BVA1: Limites de pH para Alerta]]
@@ -21,7 +21,7 @@
 * [[TC‐DT2: Validação de Dados Técnicos de Qualidade]]
 
 ## 👨‍💻 Notificações e Push
-`Responsável: João Siqueira`
+`Responsável: João Gabriel Brito Checchia`
 * [[TC‐EP1: Particionamento de Níveis de Alerta]]
 * [[TC‐EP2: Canais de Notificação Push]]
 * [[TC‐BVA1: Disparo de Alerta por Turbidez]]
@@ -30,7 +30,7 @@
 * [[TC‐DT2: Conteúdo e Recomendações dos Alertas]]
 
 ## 👨‍💻 Reporte de Saneamento
-`Responsável: Luan Ferreira`
+`Responsável: João Gabriel Brito Checchia`
 * [[TC‐EP1: Particionamento de Tipo de Problema de Saneamento]]
 * [[TC‐EP2: Estado de Localização GPS]]
 * [[TC‐BVA1: Limite de Caracteres na Descrição do Problema]]
@@ -39,7 +39,7 @@
 * [[TC‐DT2: Validação do Reporte de Ocorrência]]
 
 ## 👨‍💻 Histórico e Consulta Regional
-`Responsável: Victor Davidson`
+`Responsável: João Gabriel Brito Checchia`
 * [[TC‐EP1: Particionamento de Filtros de Histórico]]
 * [[TC‐EP2: Particionamento de Região de Consulta]]
 * [[TC‐BVA1: Limite de Período de Histórico]]
@@ -48,7 +48,7 @@
 * [[TC‐DT2: Disponibilidade Regional de Dados]]
 
 ## 👨‍💻 Cadastro e Exclusão de Conta
-`Responsável: Victor Madeu`
+`Responsável: João Gabriel Brito Checchia`
 * [[TC‐EP1: Particionamento de CPF e CNPJ]]
 * [[TC‐EP2: Particionamento de Tipo de Perfil]]
 * [[TC‐BVA1: Limites de Validação de Dados de Cadastro]]

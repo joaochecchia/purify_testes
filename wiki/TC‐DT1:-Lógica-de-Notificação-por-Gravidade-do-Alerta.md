@@ -1,4 +1,4 @@
-**Responsável:** João Siqueira
+**Responsável:** João Gabriel Brito Checchia
 
 **Técnica:** Tabela de Decisão (DT)
 

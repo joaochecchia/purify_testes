@@ -1,5 +1,5 @@
 >## 1. Introdução
->Esta página apresenta a **Matriz de Rastreabilidade** do sistema **Purify**. O objetivo deste artefato é garantir que todos os Requisitos (R) definidos na documentação e todos os Modos de Falha (F) identificados no FMEA possuam cobertura adequada por meio de Testes de Aceite (T) e Testes de Controle de Falha (TF). A matriz distribui equitativamente as responsabilidades entre os 6 membros do grupo (**Daniel Souza, João Gabriel Brito, João Siqueira, Luan Ferreira, Victor Davidson e Victor Madeu**).
+>Esta página apresenta a **Matriz de Rastreabilidade** do sistema **Purify**. O objetivo deste artefato é garantir que todos os Requisitos (R) definidos na documentação e todos os Modos de Falha (F) identificados no FMEA possuam cobertura adequada por meio de Testes de Aceite (T) e Testes de Controle de Falha (TF). A matriz documenta a cobertura de testes realizada por **João Gabriel Brito Checchia**.
 
 ### Legenda de Estados dos Testes:
 * **P:** Pendente (Não iniciado)
@@ -52,7 +52,7 @@ Os índices de **F1 a F20** referem-se à numeração exata documentada na tabel
 ## 3. Relação de Testes (T e TF)
 
 ### Autenticação e Segurança
-`Responsável: Daniel Souza`
+`Responsável: João Gabriel Brito Checchia`
 
 * **Testes de Aceite (T):**
   * **T1:** Validar login com e-mail e senha corretos.
@@ -84,7 +84,7 @@ Os índices de **F1 a F20** referem-se à numeração exata documentada na tabel
   * **TF10:** Teste de Particionamento de Coliformes.
 
 ### Notificações e Push
-`Responsável: João Siqueira`
+`Responsável: João Gabriel Brito Checchia`
 
 * **Testes de Aceite (T):**
   * **T11:** Validar envio de push notification em alerta crítico.
@@ -100,7 +100,7 @@ Os índices de **F1 a F20** referem-se à numeração exata documentada na tabel
   * **TF15:** Teste de Combinação de Múltiplos Parâmetros Críticos.
 
 ### Reporte de Saneamento
-`Responsável: Luan Ferreira`
+`Responsável: João Gabriel Brito Checchia`
 
 * **Testes de Aceite (T):**
   * **T16:** Validar reporte com localização GPS e descrição preenchidos.
@@ -116,7 +116,7 @@ Os índices de **F1 a F20** referem-se à numeração exata documentada na tabel
   * **TF20:** Teste de Seleção Manual de Localização no Mapa.
 
 ### Histórico e Consulta Regional
-`Responsável: Victor Davidson`
+`Responsável: João Gabriel Brito Checchia`
 
 * **Testes de Aceite (T):**
   * **T21:** Validar exibição de histórico em ordem cronológica decrescente.
@@ -132,7 +132,7 @@ Os índices de **F1 a F20** referem-se à numeração exata documentada na tabel
   * **TF25:** Teste de Filtro Combinado (Região + Período).
 
 ### Cadastro e Exclusão de Conta
-`Responsável: Victor Madeu`
+`Responsável: João Gabriel Brito Checchia`
 
 * **Testes de Aceite (T):**
   * **T26:** Validar cadastro com dados válidos (e-mail, CPF/CNPJ, senha forte).

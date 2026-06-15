@@ -6,12 +6,7 @@ Bem-vindo à wiki do **Purify** — sistema de monitoramento da qualidade da ág
 
 | Nome | Papel |
 | :--- | :--- |
-| Daniel Souza | Desenvolvedor / QA |
-| João Gabriel Brito | Desenvolvedor / QA |
-| João Siqueira | Desenvolvedor / QA |
-| Luan Ferreira | Desenvolvedor / QA |
-| Victor Davidson | Desenvolvedor / QA |
-| Victor Madeu | Desenvolvedor / QA |
+| João Gabriel Brito Checchia | Desenvolvedor / QA |
 
 **Orientador:** Oscar Galdino de Oliveira Junior
 
