@@ -1,9 +1,7 @@
->Esta página descreve as ações de controle elaboradas para mitigar os Modos de Falha mapeados no FMEA do sistema **Purify**. As ações baseiam-se em metodologias de testes dinâmicos (caixa-preta, particionamento de equivalência e análise de valor limite) e validam diretamente os Requisitos e Regras de Negócio do sistema.
-
----
+Esta página descreve as ações de controle elaboradas para mitigar os Modos de Falha mapeados no FMEA do sistema **Purify**. As ações baseiam-se em metodologias de testes dinâmicos (caixa-preta, particionamento de equivalência e análise de valor limite) e validam diretamente os Requisitos e Regras de Negócio do sistema.
 
 ### Ações de Controle (Autenticação e Segurança)
->`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 **1. Teste de Limite de Requisições (Força Bruta)**
 * **Descrição sucinta do teste:** Simulação de ataques de força bruta inserindo 10 senhas erradas no endpoint de login em menos de 1 minuto. O sistema deve validar o RF-11 retornando código *HTTP 429 Too Many Requests* ou bloqueando o IP temporariamente.
@@ -25,10 +23,8 @@
 * **Descrição sucinta do teste:** Revisão de código (Caixa-Branca) e consulta direta ao banco de dados. Um script tenta ler a tabela de usuários para comprovar que todas as senhas passaram por funções de hashing seguro (bcrypt), validando o RNF-007.
 * **Modo de falha controlado:** [F05] Senhas armazenadas em texto plano.
 
----
-
 ### Ações de Controle (Qualidade da Água e Alertas)
->`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 **6. Teste de Particionamento de pH**
 * **Descrição sucinta do teste:** Teste da interface e da API de registro de dados (RF-02). Inserção de valores de pH com particionamento de equivalência inválido: pH negativo (-1), pH = 0 (borda), pH = 14 (borda), pH > 14 (15). O formulário/API deve bloquear os valores inválidos.
@@ -50,10 +46,8 @@
 * **Descrição sucinta do teste:** Teste da API com valores de coliformes: valor negativo (-1), 0 UFC/100ml (seguro), 0,5 UFC/100ml (borda, deve disparar alerta), 100 UFC/100ml (claramente contaminado). O sistema deve rejeitar negativos e disparar alerta para qualquer valor > 0.
 * **Modo de falha controlado:** [F10] Coliformes aceita valor negativo.
 
----
-
 ### Ações de Controle (Notificações e Push)
->`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 **11. Teste de Envio de Notificação Push Crítica**
 * **Descrição sucinta do teste:** Após inserção de dados críticos (pH = 5,0), verificação de que a notificação push foi efetivamente enviada ao serviço de mensageria (FCM/APNS) e recebida pelo dispositivo do usuário em até 30 segundos (RNF-013, RF-04).
@@ -67,10 +61,8 @@
 * **Descrição sucinta do teste:** Simulação de carga com JMeter: 100 usuários simultâneos realizando consultas de qualidade da água. Medição do percentil 95 de latência — deve ser ≤ 2 segundos (RNF-001).
 * **Modo de falha controlado:** [F13] Tempo de resposta da API > 2 segundos.
 
----
-
 ### Ações de Controle (Reporte de Saneamento)
->`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 **14. Teste de Obrigatoriedade de Localização GPS**
 * **Descrição sucinta do teste:** Tentativa de envio de reporte de saneamento sem localização via GPS e sem seleção manual no mapa. O sistema deve bloquear a submissão e exibir mensagem de erro (RN-007, RF-21).
@@ -84,10 +76,8 @@
 * **Descrição sucinta do teste:** Clique duplo rápido no botão "Enviar Reporte" em menos de 500ms. O sistema deve registrar apenas 1 ocorrência, utilizando debounce no frontend ou idempotência no endpoint POST de ocorrências (RF-24).
 * **Modo de falha controlado:** [F16] Clique duplo cria 2 ocorrências idênticas.
 
----
-
 ### Ações de Controle (Histórico e Consulta Regional)
->`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 **17. Teste de Ordenação do Histórico**
 * **Descrição sucinta do teste:** Inserção de registros históricos com timestamps distintos (hoje, ontem, semana passada). Verificação de que a listagem retornada pela API e exibida na interface está em ordem decrescente (mais recente primeiro), conforme RN-005 e RF-09.
@@ -101,10 +91,8 @@
 * **Descrição sucinta do teste:** Consulta de qualidade da água para a região A enquanto a região B tem dados distintos. Verificação de que os dados retornados correspondem exclusivamente à região A, com filtro de ID_Regiao correto na query (RF-08, RN-002).
 * **Modo de falha controlado:** [F19] Dados de outra região exibidos.
 
----
-
 ### Ações de Controle (Cadastro e Conta)
->`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 **20. Teste de Anonimização na Exclusão de Conta**
 * **Descrição sucinta do teste:** Exclusão de uma conta que possui reportes de saneamento associados. Verificação de que os dados pessoais (nome, e-mail, CPF/CNPJ, senha) foram apagados do banco e que os reportes foram mantidos com o campo `id_usuario` nulo (anonimizado), conforme RN-008 e a LGPD.

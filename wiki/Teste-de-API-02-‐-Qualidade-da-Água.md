@@ -1,4 +1,4 @@
-`Responsável: João Gabriel Brito`
+**Responsável:** João Gabriel Brito
 
 ## 1. Modelagem de Teste de API - Tabela de Decisão
 
@@ -11,8 +11,6 @@
 | R1 - Perfil autorizado (ONG/Gov.) | S | N | S |
 | R2 - Dados válidos (pH, turbidez, coliformes) | S | S | N |
 | **Resultado esperado** | Dados salvos (201) | Acesso negado (403) | Dados rejeitados (400) |
-
----
 
 ## 2. Documentação da API
 
@@ -29,49 +27,47 @@
 
 **Body:**
 
-    {
-      "id_regiao": "integer",
-      "ph": "decimal",
-      "turbidez": "decimal",
-      "coliformes": "decimal"
-    }
+ {
+ "id_regiao": "integer",
+ "ph": "decimal",
+ "turbidez": "decimal",
+ "coliformes": "decimal"
+ }
 
 **Respostas**
 
 **201 - Criado com sucesso**
 
-    {
-      "status": "sucesso",
-      "id_qualidade": 42,
-      "alerta_gerado": false,
-      "mensagem": "Dados registrados com sucesso."
-    }
+ {
+ "status": "sucesso",
+ "id_qualidade": 42,
+ "alerta_gerado": false,
+ "mensagem": "Dados registrados com sucesso."
+ }
 
 **201 - Criado com alerta**
 
-    {
-      "status": "sucesso",
-      "id_qualidade": 43,
-      "alerta_gerado": true,
-      "nivel_risco": "CRÍTICO",
-      "recomendacao": "Água imprópria para consumo."
-    }
+ {
+ "status": "sucesso",
+ "id_qualidade": 43,
+ "alerta_gerado": true,
+ "nivel_risco": "CRÍTICO",
+ "recomendacao": "Água imprópria para consumo."
+ }
 
 **400 - Dados inválidos**
 
-    {
-      "status": "erro",
-      "mensagem": "Valor de pH inválido. Informe um valor entre 0 e 14."
-    }
+ {
+ "status": "erro",
+ "mensagem": "Valor de pH inválido. Informe um valor entre 0 e 14."
+ }
 
 **403 - Acesso negado**
 
-    {
-      "status": "erro",
-      "mensagem": "Acesso negado: Perfil não autorizado para registro técnico."
-    }
-
----
+ {
+ "status": "erro",
+ "mensagem": "Acesso negado: Perfil não autorizado para registro técnico."
+ }
 
 ## 3. Implementação no Postman
 
@@ -83,22 +79,22 @@
 
 *Body (Request):*
 
-    {
-      "id_regiao": 1,
-      "ph": 7.2,
-      "turbidez": 10.0,
-      "coliformes": 0.0
-    }
+ {
+ "id_regiao": 1,
+ "ph": 7.2,
+ "turbidez": 10.0,
+ "coliformes": 0.0
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 201", function () {
-        pm.response.to.have.status(201);
-    });
-    pm.test("Nenhum alerta deve ser gerado", function () {
-        var json = pm.response.json();
-        pm.expect(json.alerta_gerado).to.be.false;
-    });
+ pm.test("Status code deve ser 201", function () {
+ pm.response.to.have.status(201);
+ });
+ pm.test("Nenhum alerta deve ser gerado", function () {
+ var json = pm.response.json();
+ pm.expect(json.alerta_gerado).to.be.false;
+ });
 
 **Caso de Teste 02 - Dados válidos com alerta crítico (pH ácido)**
 
@@ -106,26 +102,26 @@
 
 *Body (Request):*
 
-    {
-      "id_regiao": 1,
-      "ph": 4.5,
-      "turbidez": 80.0,
-      "coliformes": 15.0
-    }
+ {
+ "id_regiao": 1,
+ "ph": 4.5,
+ "turbidez": 80.0,
+ "coliformes": 15.0
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 201", function () {
-        pm.response.to.have.status(201);
-    });
-    pm.test("Alerta deve ser gerado", function () {
-        var json = pm.response.json();
-        pm.expect(json.alerta_gerado).to.be.true;
-    });
-    pm.test("Recomendação deve estar presente", function () {
-        var json = pm.response.json();
-        pm.expect(json).to.have.property('recomendacao');
-    });
+ pm.test("Status code deve ser 201", function () {
+ pm.response.to.have.status(201);
+ });
+ pm.test("Alerta deve ser gerado", function () {
+ var json = pm.response.json();
+ pm.expect(json.alerta_gerado).to.be.true;
+ });
+ pm.test("Recomendação deve estar presente", function () {
+ var json = pm.response.json();
+ pm.expect(json).to.have.property('recomendacao');
+ });
 
 **Caso de Teste 03 - pH inválido (negativo)**
 
@@ -133,22 +129,22 @@
 
 *Body (Request):*
 
-    {
-      "id_regiao": 1,
-      "ph": -2.0,
-      "turbidez": 10.0,
-      "coliformes": 0.0
-    }
+ {
+ "id_regiao": 1,
+ "ph": -2.0,
+ "turbidez": 10.0,
+ "coliformes": 0.0
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 400", function () {
-        pm.response.to.have.status(400);
-    });
-    pm.test("Mensagem de erro correta", function () {
-        var json = pm.response.json();
-        pm.expect(json.mensagem).to.include("pH inválido");
-    });
+ pm.test("Status code deve ser 400", function () {
+ pm.response.to.have.status(400);
+ });
+ pm.test("Mensagem de erro correta", function () {
+ var json = pm.response.json();
+ pm.expect(json.mensagem).to.include("pH inválido");
+ });
 
 **Caso de Teste 04 - Acesso por perfil Morador**
 
@@ -156,20 +152,18 @@
 
 *Body (Request):*
 
-    {
-      "id_regiao": 1,
-      "ph": 7.2,
-      "turbidez": 10.0,
-      "coliformes": 0.0
-    }
+ {
+ "id_regiao": 1,
+ "ph": 7.2,
+ "turbidez": 10.0,
+ "coliformes": 0.0
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 403", function () {
-        pm.response.to.have.status(403);
-    });
-
----
+ pm.test("Status code deve ser 403", function () {
+ pm.response.to.have.status(403);
+ });
 
 ## 4. Relatório de Execução de Testes
 

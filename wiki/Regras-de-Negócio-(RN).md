@@ -1,6 +1,4 @@
-> Esta seção estabelece e detalha as Regras de Negócio (RN) que regem a lógica operacional, as políticas e os cálculos fundamentais do sistema **Purify**. As regras refletem os requisitos técnicos, normativos e legais que o sistema deve respeitar para garantir a qualidade, a segurança e a integridade das informações hídricas disponibilizadas aos usuários.
-
----
+Esta seção estabelece e detalha as Regras de Negócio (RN) que regem a lógica operacional, as políticas e os cálculos fundamentais do sistema **Purify**. As regras refletem os requisitos técnicos, normativos e legais que o sistema deve respeitar para garantir a qualidade, a segurança e a integridade das informações hídricas disponibilizadas aos usuários.
 
 ### RN-001 – Atualidade dos Dados (Freshness)
 
@@ -49,8 +47,6 @@
 * **Descrição:** Ao excluir uma conta, os dados pessoais sensíveis (nome, e-mail, senha, documentos) devem ser apagados definitivamente. Os reportes de problemas de saneamento vinculados a esse usuário devem ser mantidos de forma anonimizada para preservação do histórico estatístico da região.
 * **Fonte/Autoridade:** LGPD — Lei nº 13.709/2018
 * **Impacto:** UC-08 (Excluir Conta)
-
----
 
 ## Notas de Versão
 

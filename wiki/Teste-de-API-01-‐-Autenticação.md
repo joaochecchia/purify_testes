@@ -1,4 +1,4 @@
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 ## 1. Modelagem de Teste de API - Particionamento de Equivalência
 
@@ -15,23 +15,21 @@
 
 **CT01 - Partição P1: Credenciais válidas**
 
-    {
-      "email": "daniel@purify.com",
-      "senha": "Purify@2026"
-    }
+ {
+ "email": "daniel@purify.com",
+ "senha": "Purify@2026"
+ }
 
 *Resultado esperado:* HTTP 200 — Autenticação realizada com sucesso
 
 **CT02 - Partição P2: Credenciais inválidas**
 
-    {
-      "email": "daniel@purify.com",
-      "senha": "senhaerrada"
-    }
+ {
+ "email": "daniel@purify.com",
+ "senha": "senhaerrada"
+ }
 
 *Resultado esperado:* HTTP 401 — Credenciais inválidas
-
----
 
 ## 2. Documentação da API
 
@@ -47,30 +45,28 @@
 
 **Body:**
 
-    {
-      "email": "string",
-      "senha": "string"
-    }
+ {
+ "email": "string",
+ "senha": "string"
+ }
 
 **Respostas**
 
 **200 - Sucesso**
 
-    {
-      "status": "sucesso",
-      "token": "eyJhbGciOiJIUzI1NiIsIn...",
-      "usuario": "João Gabriel",
-      "perfil": "ONG"
-    }
+ {
+ "status": "sucesso",
+ "token": "eyJhbGciOiJIUzI1NiIsIn...",
+ "usuario": "João Gabriel",
+ "perfil": "ONG"
+ }
 
 **401 - Credenciais inválidas**
 
-    {
-      "status": "erro",
-      "mensagem": "Credenciais inválidas"
-    }
-
----
+ {
+ "status": "erro",
+ "mensagem": "Credenciais inválidas"
+ }
 
 ## 3. Implementação no Postman
 
@@ -84,46 +80,44 @@
 
 *Body (Request):*
 
-    {
-      "email": "daniel@purify.com",
-      "senha": "Purify@2026"
-    }
+ {
+ "email": "daniel@purify.com",
+ "senha": "Purify@2026"
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 200", function () {
-        pm.response.to.have.status(200);
-    });
-    pm.test("Deve retornar um token JWT", function () {
-        var json = pm.response.json();
-        pm.expect(json).to.have.property('token');
-        pm.environment.set("jwt_token", json.token);
-    });
-    pm.test("Deve retornar o perfil do usuário", function () {
-        var json = pm.response.json();
-        pm.expect(json).to.have.property('perfil');
-    });
+ pm.test("Status code deve ser 200", function () {
+ pm.response.to.have.status(200);
+ });
+ pm.test("Deve retornar um token JWT", function () {
+ var json = pm.response.json();
+ pm.expect(json).to.have.property('token');
+ pm.environment.set("jwt_token", json.token);
+ });
+ pm.test("Deve retornar o perfil do usuário", function () {
+ var json = pm.response.json();
+ pm.expect(json).to.have.property('perfil');
+ });
 
 **Caso de Teste 02 - Credenciais inválidas**
 
 *Body (Request):*
 
-    {
-      "email": "daniel@purify.com",
-      "senha": "senhaerrada"
-    }
+ {
+ "email": "daniel@purify.com",
+ "senha": "senhaerrada"
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 401", function () {
-        pm.response.to.have.status(401);
-    });
-    pm.test("Mensagem de erro correta", function () {
-        var json = pm.response.json();
-        pm.expect(json.mensagem).to.eql("Credenciais inválidas");
-    });
-
----
+ pm.test("Status code deve ser 401", function () {
+ pm.response.to.have.status(401);
+ });
+ pm.test("Mensagem de erro correta", function () {
+ var json = pm.response.json();
+ pm.expect(json.mensagem).to.eql("Credenciais inválidas");
+ });
 
 ## 4. Relatório de Execução de Testes
 
@@ -143,12 +137,12 @@
 * Status: Aprovado
 * **Evidência (Response Body - Postman):**
 
-      {
-          "status": "sucesso",
-          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV...",
-          "usuario": "João Gabriel",
-          "perfil": "ONG"
-      }
+ {
+ "status": "sucesso",
+ "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV...",
+ "usuario": "João Gabriel",
+ "perfil": "ONG"
+ }
 
 **CT02 - Credenciais inválidas**
 * Resultado esperado: 401 - Credenciais inválidas
@@ -156,10 +150,10 @@
 * Status: Aprovado
 * **Evidência (Response Body - Postman):**
 
-      {
-          "status": "erro",
-          "mensagem": "Credenciais inválidas"
-      }
+ {
+ "status": "erro",
+ "mensagem": "Credenciais inválidas"
+ }
 
 **Resumo dos resultados**
 

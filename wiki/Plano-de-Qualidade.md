@@ -4,8 +4,6 @@
 
 Este Plano de Qualidade define os critérios utilizados para avaliar a qualidade do sistema **Purify**, utilizando como base o modelo de qualidade definido pela norma **ISO/IEC 25010**. O objetivo é estabelecer metas mensuráveis para os atributos de qualidade relevantes do sistema de monitoramento da qualidade da água, bem como definir métricas e métodos de validação que permitam verificar se essas metas foram atingidas.
 
----
-
 # 1. Adequação Funcional
 
 A Adequação Funcional mede o quanto as funcionalidades do sistema atendem às necessidades dos usuários no contexto de monitoramento hídrico.
@@ -24,8 +22,6 @@ Aplicação de questionários ou entrevistas com usuários (moradores, técnicos
 
 Taxa de adequação = (Número de usuários satisfeitos / Número total de usuários avaliados) × 100
 
----
-
 ## b. Completude
 
 ### Meta de qualidade
@@ -40,8 +36,6 @@ Comparação entre os requisitos especificados e as funcionalidades implementada
 
 Completude funcional = (Número de funcionalidades implementadas / Número total de funcionalidades especificadas)
 
----
-
 ## c. Correção
 
 ### Meta de qualidade
@@ -55,8 +49,6 @@ Execução de testes funcionais e registro das falhas encontradas durante os cic
 ### Métrica utilizada
 
 Taxa de correção = (Número de execuções sem falha / Número total de execuções)
-
----
 
 # 2. Confiabilidade
 
@@ -75,8 +67,6 @@ Execução repetida de testes nas funcionalidades principais do sistema, com reg
 ### Métrica utilizada
 
 Taxa de falhas = Número de falhas / Número de execuções
-
----
 
 ## b. Disponibilidade
 
@@ -97,8 +87,6 @@ Disponibilidade = (Tempo em funcionamento / Tempo total observado) × 100
 - **Uptime Robot** ou **Datadog** para monitoramento contínuo em ambiente de produção.
 - Registro de todos os incidentes de indisponibilidade com causa raiz documentada.
 
----
-
 ## c. Tolerância a Falhas
 
 ### Meta de qualidade
@@ -113,8 +101,6 @@ Testes simulando falhas de sensores, erros de entrada de dados ou perda de conec
 
 Tolerância a falhas = (Número de falhas tratadas / Número total de falhas simuladas)
 
----
-
 ## d. Recuperabilidade
 
 ### Meta de qualidade
@@ -128,8 +114,6 @@ Simulação de falhas no backend e medição do tempo necessário para restabele
 ### Métrica utilizada
 
 Tempo médio de recuperação após falha (MTTR).
-
----
 
 # 3. Segurança da Informação
 
@@ -159,8 +143,6 @@ Meta: **0 acessos indevidos**
 - Simulação de diferentes perfis de usuário (RBAC)
 - Auditoria de permissões no sistema e nos endpoints da API
 
----
-
 ## b. Autenticidade
 
 ### Meta de qualidade
@@ -182,8 +164,6 @@ Meta: **100% dos acessos autenticados**
 - Testes de autenticação via Postman nas rotas protegidas da API
 - Verificação das rotas que exigem token JWT
 - Análise do fluxo de login e expiração de sessão
-
----
 
 ## c. Responsabilidade
 
@@ -210,8 +190,6 @@ Meta: **100% das ações críticas registradas**
 - Análise manual dos registros de log do backend
 - Verificação dos eventos gerados pelo sistema no banco de dados
 
----
-
 ## d. Integridade
 
 ### Meta de qualidade
@@ -234,8 +212,6 @@ Meta: **0 inconsistências**
 - Verificação de restrições no banco de dados (CHECK constraints, foreign keys)
 - Simulação de tentativas de alteração indevida via requisições maliciosas
 
----
-
 ## e. Não Repúdio
 
 ### Meta de qualidade
@@ -251,8 +227,6 @@ Verificação de registros contendo identificação do usuário, data, hora e ti
 Percentual de ações críticas registradas com identificação do usuário.
 
 Meta: **100% das ações críticas registradas com identificação**
-
----
 
 ## f. Resistência
 
@@ -275,8 +249,6 @@ Meta: **100% das tentativas inválidas devem ser bloqueadas**
 - Testes de segurança manuais e automatizados
 - Penetration Testing trimestral pela SecureWater Consulting
 - Análise estática de código (SAST) com ferramentas como SonarQube
-
----
 
 # 4. Desempenho e Eficiência
 
@@ -301,8 +273,6 @@ Tempo médio de resposta por transação (em segundos) e percentil 95 de latênc
 - **Apache JMeter** ou **K6** simulando múltiplos usuários simultâneos.
 - Monitoramento contínuo em ambiente de produção com **New Relic** ou **Datadog**.
 
----
-
 ## b. Utilização de Recursos
 
 ### Meta de qualidade
@@ -322,8 +292,6 @@ Percentual de uso de CPU (%), consumo de memória RAM (MB) e tamanho do payload 
 - Dashboards de monitoramento em nuvem (**AWS CloudWatch** ou **Azure Monitor**).
 - Ferramentas de profiling de código no backend.
 
----
-
 ## c. Capacidade
 
 ### Meta de qualidade
@@ -341,8 +309,6 @@ Capacidade máxima de usuários suportados = (Recurso Total Disponível / Recurs
 ### Ferramentas ou procedimentos de medição
 
 - Testes de estresse com **JMeter** ou **Gatling**, gerando tráfego massivo simulado.
-
----
 
 # 5. Compatibilidade
 
@@ -368,8 +334,6 @@ Meta: **0 falhas por conflito de recursos**
 
 - Testes dinâmicos em Device Farms (**AWS Device Farm** ou **BrowserStack**).
 
----
-
 ## b. Interoperabilidade
 
 ### Meta de qualidade
@@ -389,8 +353,6 @@ Meta: **100%**
 ### Ferramentas ou procedimentos de medição
 
 - Automação de testes de contrato com **Postman** e **Newman**.
-
----
 
 # 6. Manutenibilidade
 
@@ -416,8 +378,6 @@ Meta: **Inferior a 5%**
 
 - **SonarQube** integrado à esteira de Pull Requests.
 
----
-
 ## b. Legibilidade e Modificabilidade
 
 ### Meta de qualidade
@@ -439,8 +399,6 @@ Meta: **Tendência de redução contínua**
 - **ESLint/Prettier** para formatação no repositório.
 - **SonarQube** para cálculo de Débito Técnico.
 
----
-
 ## c. Testabilidade
 
 ### Meta de qualidade
@@ -460,8 +418,6 @@ Meta: **Pelo menos 80% do código útil coberto por testes**
 ### Ferramentas ou procedimentos de medição
 
 - Frameworks de teste automatizado com relatórios de cobertura gerados no pipeline de CI/CD.
-
----
 
 # 7. Segurança dos Dados Ambientais e da Saúde Pública
 
@@ -488,8 +444,6 @@ Meta: **0 defeitos aceitáveis em produção**
 - Testes End-to-End com **Cypress** ou **Selenium**, focados nos fluxos de alerta e registro de dados.
 - Auditoria de banco de dados para garantir integridade referencial.
 
----
-
 # 8. Flexibilidade, Portabilidade e Escalabilidade
 
 Avalia a capacidade do sistema de se manter robusto frente a mudanças no ambiente e ao crescimento do número de regiões monitoradas.
@@ -515,8 +469,6 @@ Meta: **100%**
 - Testes responsivos com **Chrome DevTools**.
 - Execução de suítes em múltiplos dispositivos reais com **BrowserStack**.
 
----
-
 ## b. Instalabilidade e Substituabilidade
 
 ### Meta de qualidade
@@ -537,8 +489,6 @@ Meta: **Inferior a 15 minutos do código à produção**
 
 - Conteinerização com **Docker**.
 - Pipelines de CI/CD com **GitHub Actions**.
-
----
 
 ## c. Escalabilidade
 

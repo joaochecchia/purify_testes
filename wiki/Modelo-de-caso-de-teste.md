@@ -1,5 +1,5 @@
->## 1. Introdução
->Esta página define o template e as instruções padrão que a nossa equipe do projeto **Purify** seguirá para a criação de casos de teste formais. O objetivo é garantir a padronização e a rastreabilidade na aplicação das técnicas de teste de Caixa Preta.
+## 1. Introdução
+Esta página define o template e as instruções padrão que a nossa equipe do projeto **Purify** seguirá para a criação de casos de teste formais. O objetivo é garantir a padronização e a rastreabilidade na aplicação das técnicas de teste de Caixa Preta.
 
 ## 2. Instruções de Preenchimento
 Cada página filha de caso de teste deve conter obrigatoriamente a seguinte estrutura:
@@ -11,8 +11,6 @@ Cada página filha de caso de teste deve conter obrigatoriamente a seguinte estr
 * **Pré-condições:** Estado inicial necessário do sistema.
 * **Modelagem:** A aplicação técnica (Inequações para EP, Conjuntos para BVA2, Matriz Lógica para DT).
 * **Casos de Execução:** Tabela contendo Entrada, Saída Esperada e Status.
-
----
 
 ## 3. Template
 

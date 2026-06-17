@@ -1,4 +1,4 @@
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 ## 1. Modelagem de Teste de API - Particionamento de Equivalência
 
@@ -12,8 +12,6 @@
 | P2 | Região sem alertas | Região com dados dentro da normalidade | Lista vazia retornada (HTTP 200, array vazio) |
 | P3 | Região inválida | ID de região inexistente | HTTP 404 — Região não encontrada |
 | P4 | Sem autenticação | Requisição sem token JWT | HTTP 401 — Não autorizado |
-
----
 
 ## 2. Documentação da API
 
@@ -29,36 +27,34 @@
 
 **200 - Alertas encontrados**
 
-    {
-      "id_regiao": 1,
-      "nome_regiao": "Asa Norte",
-      "alertas": [
-        {
-          "id_alerta": 15,
-          "nivel_risco": "CRÍTICO",
-          "mensagem": "pH 4.5 detectado — abaixo do limite seguro.",
-          "recomendacao": "Água imprópria para consumo.",
-          "data_geracao": "2026-06-03T14:30:00Z"
-        }
-      ]
-    }
+ {
+ "id_regiao": 1,
+ "nome_regiao": "Asa Norte",
+ "alertas": [
+ {
+ "id_alerta": 15,
+ "nivel_risco": "CRÍTICO",
+ "mensagem": "pH 4.5 detectado — abaixo do limite seguro.",
+ "recomendacao": "Água imprópria para consumo.",
+ "data_geracao": "2026-06-03T14:30:00Z"
+ }
+ ]
+ }
 
 **200 - Sem alertas**
 
-    {
-      "id_regiao": 2,
-      "nome_regiao": "Taguatinga",
-      "alertas": []
-    }
+ {
+ "id_regiao": 2,
+ "nome_regiao": "Taguatinga",
+ "alertas": []
+ }
 
 **404 - Região não encontrada**
 
-    {
-      "status": "erro",
-      "mensagem": "Região não encontrada."
-    }
-
----
+ {
+ "status": "erro",
+ "mensagem": "Região não encontrada."
+ }
 
 ## 3. Implementação no Postman
 
@@ -68,19 +64,19 @@
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 200", function () {
-        pm.response.to.have.status(200);
-    });
-    pm.test("Lista de alertas não deve ser vazia", function () {
-        var json = pm.response.json();
-        pm.expect(json.alertas.length).to.be.above(0);
-    });
-    pm.test("Cada alerta deve ter recomendação", function () {
-        var json = pm.response.json();
-        json.alertas.forEach(function(alerta) {
-            pm.expect(alerta).to.have.property('recomendacao');
-        });
-    });
+ pm.test("Status code deve ser 200", function () {
+ pm.response.to.have.status(200);
+ });
+ pm.test("Lista de alertas não deve ser vazia", function () {
+ var json = pm.response.json();
+ pm.expect(json.alertas.length).to.be.above(0);
+ });
+ pm.test("Cada alerta deve ter recomendação", function () {
+ var json = pm.response.json();
+ json.alertas.forEach(function(alerta) {
+ pm.expect(alerta).to.have.property('recomendacao');
+ });
+ });
 
 **Caso de Teste 02 - Região sem alertas**
 
@@ -88,15 +84,13 @@
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 200", function () {
-        pm.response.to.have.status(200);
-    });
-    pm.test("Lista de alertas deve ser vazia", function () {
-        var json = pm.response.json();
-        pm.expect(json.alertas).to.be.an('array').that.is.empty;
-    });
-
----
+ pm.test("Status code deve ser 200", function () {
+ pm.response.to.have.status(200);
+ });
+ pm.test("Lista de alertas deve ser vazia", function () {
+ var json = pm.response.json();
+ pm.expect(json.alertas).to.be.an('array').that.is.empty;
+ });
 
 ## 4. Relatório de Execução de Testes
 

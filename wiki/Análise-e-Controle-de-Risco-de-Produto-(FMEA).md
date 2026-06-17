@@ -1,6 +1,4 @@
->Esta página apresenta a Análise de Modos de Falha e Efeitos (FMEA) focada no sistema **Purify**. O objetivo é identificar riscos técnicos que possam comprometer a saúde pública, a integridade dos dados hídricos e o cumprimento das Regras de Negócio estabelecidas. Esta análise foi realizada por **João Gabriel Brito Checchia**, garantindo a rastreabilidade com os Requisitos Funcionais (RF), Não Funcionais (RNF) e Regras de Negócio (RN) documentados no projeto.
-
----
+Esta página apresenta a Análise de Modos de Falha e Efeitos (FMEA) focada no sistema **Purify**. O objetivo é identificar riscos técnicos que possam comprometer a saúde pública, a integridade dos dados hídricos e o cumprimento das Regras de Negócio estabelecidas. Esta análise foi realizada por **João Gabriel Brito Checchia**, garantindo a rastreabilidade com os Requisitos Funcionais (RF), Não Funcionais (RNF) e Regras de Negócio (RN) documentados no projeto.
 
 ## 2. Metodologia e Critérios de Pontuação
 
@@ -27,10 +25,8 @@ Mede a facilidade de detectar a falha através de testes antes que ela chegue ao
 
 ### D. RPN (Risk Priority Number)
 
-O **RPN** é o resultado da multiplicação: **S × O × D**.
+O **RPN**é o resultado da multiplicação: **S × O × D**.
 Qualquer item com **RPN acima de 100** ou **Severidade Crítica (9-10)** exige a criação de uma ação de controle imediata (Testes listados na página "Controle de Risco").
-
----
 
 ## 3. Tabela FMEA do Produto
 
@@ -56,8 +52,6 @@ Qualquer item com **RPN acima de 100** ou **Severidade Crítica (9-10)** exige a
 | **F18** | João Gabriel Brito Checchia | RF-10, RN-002 | Ausência de Dados | Região sem dados não exibe mensagem de indisponibilidade. | Usuário vê tela em branco sem entender o motivo. | Ausência de tratamento de retorno vazio (empty state). | 5 | 5 | 3 | **75** | Teste de Exibição de Região Indisponível. |
 | **F19** | João Gabriel Brito Checchia | RF-08, RN-002 | Filtro Regional | Dados de uma região A exibidos ao selecionar a região B. | Usuário toma decisões com base em dados errados. | Query SQL com filtro de ID_Regiao incorreto ou ausente. | 8 | 3 | 4 | **96** | Teste de Isolamento de Dados por Região. |
 | **F20** | João Gabriel Brito Checchia | RN-008 | Exclusão de Conta | Exclusão de conta não anonimiza os reportes de saneamento do usuário. | Violação da LGPD; dados pessoais do usuário persistem vinculados. | Procedure de exclusão não implementa UPDATE de anonimização. | 9 | 4 | 4 | **144** | Teste de Anonimização na Exclusão de Conta. |
-
----
 
 ## 4. Matriz FMEA (Severidade × Ocorrência)
 

@@ -1,19 +1,11 @@
-<h1>Critérios de Entrada e Saída dos Testes</h1>
+# Critérios de Entrada e Saída dos Testes
 
-<blockquote>
-<p>Esta página define formalmente as condições que devem ser satisfeitas para <strong>iniciar</strong> e para <strong>encerrar</strong> cada fase de testes do projeto <strong>Purify</strong>, garantindo que os testes sejam conduzidos no momento e nas condições adequadas.</p>
-</blockquote>
-
-<hr>
-
-### 
->`Responsável: João Gabriel Brito`
+Esta página define formalmente as condições que devem ser satisfeitas para **iniciar** e para **encerrar** cada fase de testes do projeto **Purify**, garantindo que os testes sejam conduzidos no momento e nas condições adequadas.
+**Responsável:** João Gabriel Brito
 
 ## 1. Introdução
 
 Critérios de entrada e saída (também chamados de *Entry Criteria* e *Exit Criteria*) são parte fundamental do processo de qualidade. Eles evitam que testes sejam executados em ambientes não preparados (desperdício de esforço) e que releases sejam aprovados sem atingir o nível mínimo de qualidade exigido.
-
----
 
 ## 2. Critérios de Entrada (Entry Criteria)
 
@@ -38,9 +30,7 @@ As condições abaixo devem ser **todas satisfeitas** antes do início de qualqu
 - [ ] Funcionalidades do escopo do ciclo implementadas e integradas
 - [ ] Testes unitários executados pelo desenvolvedor (cobertura mínima local atingida)
 - [ ] Pull Requests do ciclo aprovados e mergeados na branch de testes
-- [ ] Nenhum defeito crítico 🔴 em aberto de ciclos anteriores sem tratativa
-
----
+- [ ] Nenhum defeito crítico em aberto de ciclos anteriores sem tratativa
 
 ## 3. Critérios de Saída (Exit Criteria)
 
@@ -55,8 +45,8 @@ O ciclo de testes é considerado **encerrado e aprovado** quando todas as condi�
 
 ### 3.2 Defeitos
 
-- [ ] Nenhum defeito com severidade **🔴 Crítico** em aberto (especialmente nos módulos de alerta e dados hídricos)
-- [ ] Nenhum defeito com severidade **🟠 Alto** em aberto sem previsão de correção documentada
+- [ ] Nenhum defeito com severidade **Crítico** em aberto (especialmente nos módulos de alerta e dados hídricos)
+- [ ] Nenhum defeito com severidade **Alto** em aberto sem previsão de correção documentada
 - [ ] Todos os defeitos registrados possuem: descrição, severidade, responsável e status
 
 ### 3.3 Qualidade do Plano de Qualidade (ISO/IEC 25010)
@@ -74,8 +64,6 @@ O ciclo de testes é considerado **encerrado e aprovado** quando todas as condi�
 - [ ] Defeitos registrados nas Issues do repositório
 - [ ] Rastreabilidade atualizada (matriz de rastreabilidade)
 - [ ] Aprovação formal do encerramento pelo responsável de qualidade da equipe
-
----
 
 ## 4. Critérios por Fase de Teste
 
@@ -110,12 +98,10 @@ O ciclo de testes é considerado **encerrado e aprovado** quando todas as condi�
 | Ambiente de carga configurado (JMeter) | P95 de latência ≤ 2 segundos |
 | Dados de teste em volume representativo | 0 erros durante a execução de carga normal |
 
----
-
 ## 5. Exceções e Saídas Antecipadas
 
 Em casos excepcionais, o encerramento do ciclo pode ser autorizado mesmo com critérios não totalmente atingidos, **desde que**:
 
-- Todos os defeitos críticos 🔴 estejam tratados ou com plano de mitigação documentado;
+- Todos os defeitos críticos estejam tratados ou com plano de mitigação documentado;
 - Os módulos de geração de alertas (RN-004) e autenticação (RF-11) estejam 100% aprovados;
 - A equipe e o orientador tenham sido formalmente notificados e concordado com a saída antecipada.

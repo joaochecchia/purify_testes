@@ -1,6 +1,4 @@
-> Esta seção define os Requisitos Não Funcionais (RNF) do sistema **Purify**, estabelecendo critérios de qualidade relacionados a desempenho, segurança, disponibilidade, usabilidade e manutenção da aplicação de monitoramento da qualidade da água.
-
-***
+Esta seção define os Requisitos Não Funcionais (RNF) do sistema **Purify**, estabelecendo critérios de qualidade relacionados a desempenho, segurança, disponibilidade, usabilidade e manutenção da aplicação de monitoramento da qualidade da água.
 
 ## **RNF-001 – Desempenho: Tempo de Resposta**
 
@@ -70,8 +68,6 @@
 
 * **Descrição:** O sistema deve processar e disparar notificações push de alerta de risco dentro de no máximo 30 segundos após a detecção de parâmetros críticos pelos sensores IoT.
 * **Impacto:** RN-004, RF-04.
-
-***
 
 ## **Notas de Versão**
 

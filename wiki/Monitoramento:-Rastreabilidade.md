@@ -1,5 +1,5 @@
->## 1. Introdução
->Esta página apresenta a **Matriz de Rastreabilidade** do sistema **Purify**. O objetivo deste artefato é garantir que todos os Requisitos (R) definidos na documentação e todos os Modos de Falha (F) identificados no FMEA possuam cobertura adequada por meio de Testes de Aceite (T) e Testes de Controle de Falha (TF). A matriz documenta a cobertura de testes realizada por **João Gabriel Brito Checchia**.
+## 1. Introdução
+Esta página apresenta a **Matriz de Rastreabilidade** do sistema **Purify**. O objetivo deste artefato é garantir que todos os Requisitos (R) definidos na documentação e todos os Modos de Falha (F) identificados no FMEA possuam cobertura adequada por meio de Testes de Aceite (T) e Testes de Controle de Falha (TF). A matriz documenta a cobertura de testes realizada por **João Gabriel Brito Checchia**.
 
 ### Legenda de Estados dos Testes:
 * **P:** Pendente (Não iniciado)
@@ -8,8 +8,6 @@
 * **A:** Aprovado (Executado com sucesso)
 * **R:** Reprovado (Executado, mas apresentou falha/bug)
 * **-:** Não se aplica (Sem relação com o teste na célula)
-
----
 
 ## 2. Índices de Mapeamento
 
@@ -47,107 +45,103 @@
 
 Os índices de **F1 a F20** referem-se à numeração exata documentada na tabela FMEA presente na página *Análise e Controle de Risco de Produto (FMEA)*.
 
----
-
 ## 3. Relação de Testes (T e TF)
 
 ### Autenticação e Segurança
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 * **Testes de Aceite (T):**
-  * **T1:** Validar login com e-mail e senha corretos.
-  * **T2:** Bloquear acesso com credenciais inválidas.
-  * **T3:** Validar acesso restrito por perfil (Morador vs ONG/Governante).
-  * **T4:** Confirmar expiração de token JWT após prazo configurado.
-  * **T5:** Verificar bloqueio de conta após tentativas excessivas de login.
+ * **T1:** Validar login com e-mail e senha corretos.
+ * **T2:** Bloquear acesso com credenciais inválidas.
+ * **T3:** Validar acesso restrito por perfil (Morador vs ONG/Governante).
+ * **T4:** Confirmar expiração de token JWT após prazo configurado.
+ * **T5:** Verificar bloqueio de conta após tentativas excessivas de login.
 * **Testes de Controle de Falha (TF):**
-  * **TF1:** Teste de Limite de Requisições contra Brute Force.
-  * **TF2:** Teste de Isolamento de Perfil (RBAC no backend).
-  * **TF3:** Teste de Validade e Expiração de Token JWT.
-  * **TF4:** Teste de Duplicidade de Cadastro.
-  * **TF5:** Teste Estático de Criptografia de Senhas.
+ * **TF1:** Teste de Limite de Requisições contra Brute Force.
+ * **TF2:** Teste de Isolamento de Perfil (RBAC no backend).
+ * **TF3:** Teste de Validade e Expiração de Token JWT.
+ * **TF4:** Teste de Duplicidade de Cadastro.
+ * **TF5:** Teste Estático de Criptografia de Senhas.
 
 ### Qualidade da Água e Alertas
-`Responsável: João Gabriel Brito`
+**Responsável:** João Gabriel Brito
 
 * **Testes de Aceite (T):**
-  * **T6:** Validar registro de dados hídricos por usuário técnico (pH, turbidez, coliformes).
-  * **T7:** Confirmar rejeição de dados inválidos (pH negativo, turbidez negativa).
-  * **T8:** Validar geração de alerta quando pH < 6,0.
-  * **T9:** Validar ausência de alerta com parâmetros dentro da normalidade.
-  * **T10:** Confirmar que coliformes > 0 UFC/100ml gera alerta.
+ * **T6:** Validar registro de dados hídricos por usuário técnico (pH, turbidez, coliformes).
+ * **T7:** Confirmar rejeição de dados inválidos (pH negativo, turbidez negativa).
+ * **T8:** Validar geração de alerta quando pH < 6,0.
+ * **T9:** Validar ausência de alerta com parâmetros dentro da normalidade.
+ * **T10:** Confirmar que coliformes > 0 UFC/100ml gera alerta.
 * **Testes de Controle de Falha (TF):**
-  * **TF6:** Teste de Particionamento de pH.
-  * **TF7:** Teste de Borda do Gatilho de pH.
-  * **TF8:** Teste de Ausência de Alerta com Dados Normais.
-  * **TF9:** Teste de Particionamento de Turbidez.
-  * **TF10:** Teste de Particionamento de Coliformes.
+ * **TF6:** Teste de Particionamento de pH.
+ * **TF7:** Teste de Borda do Gatilho de pH.
+ * **TF8:** Teste de Ausência de Alerta com Dados Normais.
+ * **TF9:** Teste de Particionamento de Turbidez.
+ * **TF10:** Teste de Particionamento de Coliformes.
 
 ### Notificações e Push
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 * **Testes de Aceite (T):**
-  * **T11:** Validar envio de push notification em alerta crítico.
-  * **T12:** Confirmar que alerta contém recomendação de uso da água.
-  * **T13:** Validar que overlay vermelho aparece no mapa em área crítica.
-  * **T14:** Confirmar ausência de notificação em parâmetros normais.
-  * **T15:** Validar tempo de chegada da notificação (≤ 30 segundos).
+ * **T11:** Validar envio de push notification em alerta crítico.
+ * **T12:** Confirmar que alerta contém recomendação de uso da água.
+ * **T13:** Validar que overlay vermelho aparece no mapa em área crítica.
+ * **T14:** Confirmar ausência de notificação em parâmetros normais.
+ * **T15:** Validar tempo de chegada da notificação (≤ 30 segundos).
 * **Testes de Controle de Falha (TF):**
-  * **TF11:** Teste de Envio de Notificação Push Crítica.
-  * **TF12:** Teste de Conteúdo dos Alertas.
-  * **TF13:** Teste de Desempenho e Carga da API.
-  * **TF14:** Teste de Alerta por Diferentes Parâmetros Críticos.
-  * **TF15:** Teste de Combinação de Múltiplos Parâmetros Críticos.
+ * **TF11:** Teste de Envio de Notificação Push Crítica.
+ * **TF12:** Teste de Conteúdo dos Alertas.
+ * **TF13:** Teste de Desempenho e Carga da API.
+ * **TF14:** Teste de Alerta por Diferentes Parâmetros Críticos.
+ * **TF15:** Teste de Combinação de Múltiplos Parâmetros Críticos.
 
 ### Reporte de Saneamento
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 * **Testes de Aceite (T):**
-  * **T16:** Validar reporte com localização GPS e descrição preenchidos.
-  * **T17:** Confirmar bloqueio de reporte sem localização GPS.
-  * **T18:** Confirmar bloqueio de reporte sem descrição.
-  * **T19:** Validar associação do reporte ao usuário.
-  * **T20:** Confirmar seleção de tipo de problema.
+ * **T16:** Validar reporte com localização GPS e descrição preenchidos.
+ * **T17:** Confirmar bloqueio de reporte sem localização GPS.
+ * **T18:** Confirmar bloqueio de reporte sem descrição.
+ * **T19:** Validar associação do reporte ao usuário.
+ * **T20:** Confirmar seleção de tipo de problema.
 * **Testes de Controle de Falha (TF):**
-  * **TF16:** Teste de Obrigatoriedade de Localização GPS.
-  * **TF17:** Teste de Validação de Descrição do Reporte.
-  * **TF18:** Teste de Concorrência no Registro de Reporte.
-  * **TF19:** Teste de Tipo de Problema Válido.
-  * **TF20:** Teste de Seleção Manual de Localização no Mapa.
+ * **TF16:** Teste de Obrigatoriedade de Localização GPS.
+ * **TF17:** Teste de Validação de Descrição do Reporte.
+ * **TF18:** Teste de Concorrência no Registro de Reporte.
+ * **TF19:** Teste de Tipo de Problema Válido.
+ * **TF20:** Teste de Seleção Manual de Localização no Mapa.
 
 ### Histórico e Consulta Regional
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 * **Testes de Aceite (T):**
-  * **T21:** Validar exibição de histórico em ordem cronológica decrescente.
-  * **T22:** Confirmar filtro de histórico por região.
-  * **T23:** Validar mensagem de ausência de dados para região sem registros.
-  * **T24:** Confirmar isolamento de dados entre regiões distintas.
-  * **T25:** Validar paginação de dados históricos.
+ * **T21:** Validar exibição de histórico em ordem cronológica decrescente.
+ * **T22:** Confirmar filtro de histórico por região.
+ * **T23:** Validar mensagem de ausência de dados para região sem registros.
+ * **T24:** Confirmar isolamento de dados entre regiões distintas.
+ * **T25:** Validar paginação de dados históricos.
 * **Testes de Controle de Falha (TF):**
-  * **TF21:** Teste de Ordenação do Histórico.
-  * **TF22:** Teste de Exibição de Região Indisponível.
-  * **TF23:** Teste de Isolamento de Dados por Região.
-  * **TF24:** Teste de Paginação de Histórico.
-  * **TF25:** Teste de Filtro Combinado (Região + Período).
+ * **TF21:** Teste de Ordenação do Histórico.
+ * **TF22:** Teste de Exibição de Região Indisponível.
+ * **TF23:** Teste de Isolamento de Dados por Região.
+ * **TF24:** Teste de Paginação de Histórico.
+ * **TF25:** Teste de Filtro Combinado (Região + Período).
 
 ### Cadastro e Exclusão de Conta
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 * **Testes de Aceite (T):**
-  * **T26:** Validar cadastro com dados válidos (e-mail, CPF/CNPJ, senha forte).
-  * **T27:** Confirmar rejeição de e-mail duplicado no cadastro.
-  * **T28:** Validar que senha fraca bloqueia o cadastro.
-  * **T29:** Confirmar exclusão de conta com anonimização de reportes.
-  * **T30:** Validar que CPF/CNPJ inválido (dígitos verificadores errados) bloqueia cadastro.
+ * **T26:** Validar cadastro com dados válidos (e-mail, CPF/CNPJ, senha forte).
+ * **T27:** Confirmar rejeição de e-mail duplicado no cadastro.
+ * **T28:** Validar que senha fraca bloqueia o cadastro.
+ * **T29:** Confirmar exclusão de conta com anonimização de reportes.
+ * **T30:** Validar que CPF/CNPJ inválido (dígitos verificadores errados) bloqueia cadastro.
 * **Testes de Controle de Falha (TF):**
-  * **TF26:** Teste de Duplicidade de Cadastro.
-  * **TF27:** Teste de Validação de Força de Senha.
-  * **TF28:** Teste de Unicidade de CPF/CNPJ.
-  * **TF29:** Teste de Anonimização na Exclusão de Conta.
-  * **TF30:** Teste de Validação de Perfil no Cadastro.
-
----
+ * **TF26:** Teste de Duplicidade de Cadastro.
+ * **TF27:** Teste de Validação de Força de Senha.
+ * **TF28:** Teste de Unicidade de CPF/CNPJ.
+ * **TF29:** Teste de Anonimização na Exclusão de Conta.
+ * **TF30:** Teste de Validação de Perfil no Cadastro.
 
 ## 4. Matriz de Rastreabilidade
 

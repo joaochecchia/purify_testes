@@ -1,6 +1,4 @@
-> O projeto **Purify** é um sistema de monitoramento da qualidade da água desenvolvido no contexto da disciplina de Requisitos de Software da Universidade Católica de Brasília. O sistema integra sensores IoT a uma plataforma móvel para coletar, validar e exibir dados de parâmetros hídricos — como pH, turbidez e coliformes — em tempo real, alertando moradores e autoridades sobre condições de risco. A ausência de acesso imediato a informações sobre a qualidade da água é uma preocupação crescente no Distrito Federal. Sem um sistema eficaz de monitoramento, é difícil detectar e responder prontamente a eventos de contaminação, colocando em risco a saúde pública e o meio ambiente.
-
----
+O projeto **Purify**é um sistema de monitoramento da qualidade da água desenvolvido no contexto da disciplina de Requisitos de Software da Universidade Católica de Brasília. O sistema integra sensores IoT a uma plataforma móvel para coletar, validar e exibir dados de parâmetros hídricos — como pH, turbidez e coliformes — em tempo real, alertando moradores e autoridades sobre condições de risco. A ausência de acesso imediato a informações sobre a qualidade da água é uma preocupação crescente no Distrito Federal. Sem um sistema eficaz de monitoramento, é difícil detectar e responder prontamente a eventos de contaminação, colocando em risco a saúde pública e o meio ambiente.
 
 ## **OBJETIVO GERAL**
 
@@ -9,8 +7,6 @@ O objetivo do projeto é desenvolver um sistema confiável e acessível de **mon
 O sistema tem como finalidade reduzir o tempo de resposta a incidentes de contaminação, aumentar a transparência sobre a saúde dos recursos hídricos e facilitar a tomada de decisões informadas por parte de autoridades reguladoras e da população em geral.
 
 Além disso, o projeto busca priorizar **qualidade de software e testabilidade**, adotando uma arquitetura que permita a criação de testes automatizados para validar as regras de negócio relacionadas ao monitoramento hídrico.
-
----
 
 ## **OBJETIVOS ESPECÍFICOS**
 

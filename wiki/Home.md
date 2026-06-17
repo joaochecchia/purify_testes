@@ -1,18 +1,14 @@
 Bem-vindo à wiki do **Purify** — sistema de monitoramento da qualidade da água desenvolvido pela **Universidade Católica de Brasília**, no contexto da disciplina de Requisitos de Software.
 
----
-
-## 👥 Equipe
+## Equipe
 
 | Nome | Papel |
 | :--- | :--- |
 | João Gabriel Brito Checchia | Desenvolvedor / QA |
 
-**Orientador:** Oscar Galdino de Oliveira Junior
+**Orientador:** Zoe Magalhães
 
----
-
-## 📚 Documentação do Projeto
+## Documentação do Projeto
 
 * [[Visão]] — Objetivo geral e objetivos específicos do produto
 * [[Regras de Negócio (RN)]] — Políticas e restrições que governam o sistema
@@ -20,9 +16,7 @@ Bem-vindo à wiki do **Purify** — sistema de monitoramento da qualidade da ág
 * [[Requisitos Funcionais]] — Requisitos funcionais com critérios de aceitação em Gherkin
 * [[Requisitos Não Funcionais (RNF)]] — Requisitos de qualidade do sistema
 
----
-
-## 🏆 Qualidade
+## Qualidade
 
 * [[Plano de Qualidade]] — Plano de qualidade baseado na ISO/IEC 25010
 * [[Análise e Controle de Risco de Produto (FMEA)]] — FMEA do produto
@@ -30,9 +24,7 @@ Bem-vindo à wiki do **Purify** — sistema de monitoramento da qualidade da ág
 * [[Critérios de entrada e saída dos testes]] — Entry/Exit criteria do ciclo de testes
 * [[Monitoramento: Rastreabilidade]] — Matriz de rastreabilidade dos testes
 
----
-
-## 🧪 Testes de Software
+## Testes de Software
 
 * [[Plano de Aplicação ‐ BDD]] — Como o BDD é aplicado no projeto
 * [[Modelo de caso de teste]] — Template padrão de caso de teste

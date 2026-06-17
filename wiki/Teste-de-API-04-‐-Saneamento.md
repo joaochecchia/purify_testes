@@ -1,4 +1,4 @@
-`Responsável: João Gabriel Brito Checchia`
+**Responsável:** João Gabriel Brito Checchia
 
 ## 1. Modelagem de Teste de API - Particionamento de Equivalência
 
@@ -13,8 +13,6 @@
 | P3 | Sem descrição | Descrição vazia ou ausente | HTTP 400 — Descrição obrigatória |
 | P4 | Sem autenticação | Requisição sem token JWT | HTTP 401 — Não autorizado |
 
----
-
 ## 2. Documentação da API
 
 **Endpoint:** Reporte de Problema de Saneamento
@@ -28,31 +26,29 @@
 
 **Body:**
 
-    {
-      "tipo_problema": "string (VAZAMENTO | ESGOTO_ABERTO | FALTA_COLETA | OUTRO)",
-      "descricao": "string",
-      "latitude": "decimal",
-      "longitude": "decimal"
-    }
+ {
+ "tipo_problema": "string (VAZAMENTO | ESGOTO_ABERTO | FALTA_COLETA | OUTRO)",
+ "descricao": "string",
+ "latitude": "decimal",
+ "longitude": "decimal"
+ }
 
 **Respostas**
 
 **201 - Ocorrência registrada**
 
-    {
-      "status": "sucesso",
-      "id_ocorrencia": 88,
-      "mensagem": "Reporte enviado com sucesso!"
-    }
+ {
+ "status": "sucesso",
+ "id_ocorrencia": 88,
+ "mensagem": "Reporte enviado com sucesso!"
+ }
 
 **400 - Localização ausente**
 
-    {
-      "status": "erro",
-      "mensagem": "Localização obrigatória para reportar ocorrência."
-    }
-
----
+ {
+ "status": "erro",
+ "mensagem": "Localização obrigatória para reportar ocorrência."
+ }
 
 ## 3. Implementação no Postman
 
@@ -64,45 +60,43 @@
 
 *Body (Request):*
 
-    {
-      "tipo_problema": "VAZAMENTO",
-      "descricao": "Vazamento de água na calçada da Rua 12, próximo ao número 50.",
-      "latitude": -15.7890,
-      "longitude": -48.1234
-    }
+ {
+ "tipo_problema": "VAZAMENTO",
+ "descricao": "Vazamento de água na calçada da Rua 12, próximo ao número 50.",
+ "latitude": -15.7890,
+ "longitude": -48.1234
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 201", function () {
-        pm.response.to.have.status(201);
-    });
-    pm.test("Ocorrência deve ter ID gerado", function () {
-        var json = pm.response.json();
-        pm.expect(json).to.have.property('id_ocorrencia');
-    });
+ pm.test("Status code deve ser 201", function () {
+ pm.response.to.have.status(201);
+ });
+ pm.test("Ocorrência deve ter ID gerado", function () {
+ var json = pm.response.json();
+ pm.expect(json).to.have.property('id_ocorrencia');
+ });
 
 **Caso de Teste 02 - Sem localização**
 
 *Body (Request):*
 
-    {
-      "tipo_problema": "ESGOTO_ABERTO",
-      "descricao": "Esgoto aberto na rua.",
-      "latitude": null,
-      "longitude": null
-    }
+ {
+ "tipo_problema": "ESGOTO_ABERTO",
+ "descricao": "Esgoto aberto na rua.",
+ "latitude": null,
+ "longitude": null
+ }
 
 *Testes (Postman - Tests):*
 
-    pm.test("Status code deve ser 400", function () {
-        pm.response.to.have.status(400);
-    });
-    pm.test("Mensagem de erro sobre localização", function () {
-        var json = pm.response.json();
-        pm.expect(json.mensagem).to.include("Localização obrigatória");
-    });
-
----
+ pm.test("Status code deve ser 400", function () {
+ pm.response.to.have.status(400);
+ });
+ pm.test("Mensagem de erro sobre localização", function () {
+ var json = pm.response.json();
+ pm.expect(json.mensagem).to.include("Localização obrigatória");
+ });
 
 ## 4. Relatório de Execução de Testes
 
