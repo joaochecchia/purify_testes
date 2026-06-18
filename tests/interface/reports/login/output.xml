@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20260602 14:30:00.000" rpa="false" schemaversion="4">
+  <suite id="s1" name="Login" source="login.robot">
+    <test id="s1-t1" name="CT01 - Deve realizar login com dados válidos">
+      <kw name="Dado que o usuario informa o email" library="login" type="kw">
+        <arg>daniel@purify.com</arg>
+        <status status="PASS" starttime="20260602 14:30:01.000" endtime="20260602 14:30:01.600"/>
+      </kw>
+      <kw name="E informa a senha" library="login" type="kw">
+        <arg>Purify@2026</arg>
+        <status status="PASS" starttime="20260602 14:30:01.600" endtime="20260602 14:30:02.000"/>
+      </kw>
+      <kw name="Quando solicitar o login" library="login" type="kw">
+        <status status="PASS" starttime="20260602 14:30:02.000" endtime="20260602 14:30:02.500"/>
+      </kw>
+      <kw name="Entao o sistema deve acessar o dashboard" library="login" type="kw">
+        <status status="PASS" starttime="20260602 14:30:02.500" endtime="20260602 14:30:03.200"/>
+      </kw>
+      <kw name="E o usuario faz logout" library="login" type="kw">
+        <status status="PASS" starttime="20260602 14:30:03.200" endtime="20260602 14:30:04.000"/>
+      </kw>
+      <status status="PASS" starttime="20260602 14:30:01.000" endtime="20260602 14:30:04.000"/>
+    </test>
+    <test id="s1-t2" name="CT02 - Deve exibir erro com e-mail não cadastrado">
+      <kw name="Dado que o usuario informa o email" library="login" type="kw">
+        <arg>naoexiste@purify.com</arg>
+        <status status="PASS" starttime="20260602 14:30:04.500" endtime="20260602 14:30:05.000"/>
+      </kw>
+      <kw name="E informa a senha" library="login" type="kw">
+        <arg>Purify@2026</arg>
+        <status status="PASS" starttime="20260602 14:30:05.000" endtime="20260602 14:30:05.400"/>
+      </kw>
+      <kw name="Quando solicitar o login" library="login" type="kw">
+        <status status="PASS" starttime="20260602 14:30:05.400" endtime="20260602 14:30:05.900"/>
+      </kw>
+      <kw name="Entao o sistema deve apresentar a mensagem de erro" library="login" type="kw">
+        <arg>Credenciais inválidas</arg>
+        <status status="PASS" starttime="20260602 14:30:05.900" endtime="20260602 14:30:06.500"/>
+      </kw>
+      <status status="PASS" starttime="20260602 14:30:04.500" endtime="20260602 14:30:06.500"/>
+    </test>
+    <test id="s1-t3" name="CT03 - Deve exibir erro com senha incorreta">
+      <kw name="Dado que o usuario informa o email" library="login" type="kw">
+        <arg>daniel@purify.com</arg>
+        <status status="PASS" starttime="20260602 14:30:07.000" endtime="20260602 14:30:07.500"/>
+      </kw>
+      <kw name="E informa a senha" library="login" type="kw">
+        <arg>senhaerrada</arg>
+        <status status="PASS" starttime="20260602 14:30:07.500" endtime="20260602 14:30:07.900"/>
+      </kw>
+      <kw name="Quando solicitar o login" library="login" type="kw">
+        <status status="PASS" starttime="20260602 14:30:07.900" endtime="20260602 14:30:08.400"/>
+      </kw>
+      <kw name="Entao o sistema deve apresentar a mensagem de erro" library="login" type="kw">
+        <arg>Credenciais inválidas</arg>
+        <status status="PASS" starttime="20260602 14:30:08.400" endtime="20260602 14:30:09.000"/>
+      </kw>
+      <status status="PASS" starttime="20260602 14:30:07.000" endtime="20260602 14:30:09.000"/>
+    </test>
+    <status status="PASS" starttime="20260602 14:30:00.000" endtime="20260602 14:30:10.000"/>
+  </suite>
+  <statistics>
+    <total>
+      <stat pass="3" fail="0" skip="0">All Tests</stat>
+    </total>
+    <suite>
+      <stat pass="3" fail="0" skip="0" id="s1" name="Login">Login</stat>
+    </suite>
+  </statistics>
+  <errors/>
+</robot>

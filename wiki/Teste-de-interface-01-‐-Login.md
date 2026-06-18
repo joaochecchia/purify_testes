@@ -16,6 +16,8 @@
 
 **Robot Framework com SeleniumLibrary**
 
+**Arquivo do script:** [`tests/interface/login.robot`](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/login.robot)
+
 **Suite de Teste:** `login.robot`
 
  ***Settings ***
@@ -116,5 +118,13 @@
 | Total de testes | Aprovados | Reprovados |
 | :--- | :--- | :--- |
 | 3 | 3 | 0 |
+
+**Arquivos de Evidência da Execução**
+
+| Arquivo | Descrição | Link |
+| :--- | :--- | :--- |
+| report.html | Resumo executivo da execução dos testes | [Abrir report.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/login/report.html) |
+| log.html | Log detalhado da execução dos testes | [Abrir log.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/login/log.html) |
+| output.xml | Resultado bruto da execução dos testes | [Abrir output.xml](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/login/output.xml) |
 
 **Conclusão:** Os testes automatizados executados utilizando Robot Framework e SeleniumLibrary apresentaram total conformidade com o comportamento esperado da tela de login do sistema Purify.

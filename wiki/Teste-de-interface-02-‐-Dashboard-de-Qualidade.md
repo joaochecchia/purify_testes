@@ -16,6 +16,8 @@
 
 **Robot Framework com SeleniumLibrary**
 
+**Arquivo do script:** [`tests/interface/dashboard_qualidade.robot`](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/dashboard_qualidade.robot)
+
 **Suite de Teste:** `dashboard_qualidade.robot`
 
  ***Settings ***
@@ -118,5 +120,13 @@
 | Total de testes | Aprovados | Reprovados |
 | :--- | :--- | :--- |
 | 3 | 3 | 0 |
+
+**Arquivos de Evidência da Execução**
+
+| Arquivo | Descrição | Link |
+| :--- | :--- | :--- |
+| report.html | Resumo executivo da execução dos testes | [Abrir report.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/dashboard_qualidade/report.html) |
+| log.html | Log detalhado da execução dos testes | [Abrir log.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/dashboard_qualidade/log.html) |
+| output.xml | Resultado bruto da execução dos testes | [Abrir output.xml](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/dashboard_qualidade/output.xml) |
 
 **Conclusão:** Os testes automatizados do dashboard de qualidade da água validaram corretamente a exibição de indicadores por status (seguro, atenção, crítico), a geração de pop-up de alerta e a exibição da mensagem de ausência de dados, em conformidade com RF-03, RF-04, RF-05 e RN-004.

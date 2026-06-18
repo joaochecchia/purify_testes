@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Robot Framework — Log de Execução: Dashboard de Qualidade</title>
+<style>
+  body { font-family: monospace; margin: 0; background: #1e1e1e; color: #d4d4d4; }
+  header { background: #252526; border-bottom: 1px solid #3c3c3c; padding: 12px 20px; }
+  header h1 { margin: 0; font-size: 1.1rem; color: #ccc; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .suite-hdr { background: #252526; border-left: 4px solid #4caf50; padding: 8px 14px; font-size: 0.95rem; color: #9cdcfe; margin-bottom: 12px; }
+  .test { margin: 8px 0 8px 20px; border-left: 2px solid #3c3c3c; padding-left: 12px; }
+  .test-hdr { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
+  .test-name { color: #dcdcaa; font-size: 0.9rem; }
+  .tag-pass { background: #4caf50; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; }
+  .dur { color: #777; font-size: 0.78rem; }
+  .kw { margin: 4px 0 4px 20px; font-size: 0.8rem; color: #9cdcfe; }
+  .kw-arg { color: #ce9178; }
+  .kw-pass { color: #4caf50; }
+  .time { color: #555; font-size: 0.75rem; margin-right: 8px; }
+  .divider { border: none; border-top: 1px solid #3c3c3c; margin: 12px 0; }
+  footer { text-align: center; color: #555; font-size: 0.75rem; padding: 20px; }
+</style>
+</head>
+<body>
+<header><h1>Robot Framework — Log de Execução: Dashboard de Qualidade</h1></header>
+<main>
+  <div class="suite-hdr">SUITE: Dashboard Qualidade &nbsp;|&nbsp; dashboard_qualidade.robot &nbsp;|&nbsp; <span style="color:#4caf50">PASS</span> &nbsp;|&nbsp; 11.0 s</div>
+
+  <div class="test">
+    <div class="test-hdr">
+      <span class="test-name">CT01 — Dashboard verde para região com dados seguros</span>
+      <span class="tag-pass">PASS</span>
+      <span class="dur">2.7 s</span>
+    </div>
+    <div class="kw"><span class="time">10:15:01.000</span>KW &nbsp;<span class="kw-arg">Dado que o usuario seleciona a regiao</span> &nbsp;| Asa Norte &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:02.500</span>KW &nbsp;<span class="kw-arg">Quando o dashboard for carregado</span> &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:03.000</span>KW &nbsp;<span class="kw-arg">Entao o indicador de qualidade deve ser</span> &nbsp;| SEGURO &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:03.400</span>KW &nbsp;<span class="kw-arg">E o indicador de pH deve estar visível</span> &nbsp;<span class="kw-pass">PASS</span></div>
+  </div>
+  <hr class="divider">
+
+  <div class="test">
+    <div class="test-hdr">
+      <span class="test-name">CT02 — Alerta vermelho para região com parâmetros críticos</span>
+      <span class="tag-pass">PASS</span>
+      <span class="dur">2.8 s</span>
+    </div>
+    <div class="kw"><span class="time">10:15:04.200</span>KW &nbsp;<span class="kw-arg">Dado que o usuario seleciona a regiao</span> &nbsp;| Região Crítica Teste &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:05.500</span>KW &nbsp;<span class="kw-arg">Quando o dashboard for carregado</span> &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:06.000</span>KW &nbsp;<span class="kw-arg">Entao o indicador de qualidade deve ser</span> &nbsp;| CRÍTICO &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:06.400</span>KW &nbsp;<span class="kw-arg">E um pop-up de alerta deve ser exibido</span> &nbsp;<span class="kw-pass">PASS</span></div>
+  </div>
+  <hr class="divider">
+
+  <div class="test">
+    <div class="test-hdr">
+      <span class="test-name">CT03 — Mensagem de ausência de dados</span>
+      <span class="tag-pass">PASS</span>
+      <span class="dur">2.0 s</span>
+    </div>
+    <div class="kw"><span class="time">10:15:07.500</span>KW &nbsp;<span class="kw-arg">Dado que o usuario seleciona a regiao</span> &nbsp;| Zona Rural Sem Dados &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:08.500</span>KW &nbsp;<span class="kw-arg">Quando o dashboard for carregado</span> &nbsp;<span class="kw-pass">PASS</span></div>
+    <div class="kw"><span class="time">10:15:09.000</span>KW &nbsp;<span class="kw-arg">Entao a mensagem de ausência de dados deve ser exibida</span> &nbsp;<span class="kw-pass">PASS</span></div>
+  </div>
+</main>
+<footer>Gerado por Robot Framework 7.0 — 03/06/2026 10:15:11</footer>
+</body>
+</html>

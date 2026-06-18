@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20260603 10:15:00.000" rpa="false" schemaversion="4">
+  <suite id="s1" name="Dashboard Qualidade" source="dashboard_qualidade.robot">
+    <test id="s1-t1" name="CT01 - Deve exibir dashboard verde para região com dados seguros">
+      <kw name="Dado que o usuario seleciona a regiao" library="dashboard_qualidade" type="kw">
+        <arg>Asa Norte</arg>
+        <status status="PASS" starttime="20260603 10:15:01.000" endtime="20260603 10:15:02.500"/>
+      </kw>
+      <kw name="Quando o dashboard for carregado" library="dashboard_qualidade" type="kw">
+        <status status="PASS" starttime="20260603 10:15:02.500" endtime="20260603 10:15:03.000"/>
+      </kw>
+      <kw name="Entao o indicador de qualidade deve ser" library="dashboard_qualidade" type="kw">
+        <arg>SEGURO</arg>
+        <status status="PASS" starttime="20260603 10:15:03.000" endtime="20260603 10:15:03.400"/>
+      </kw>
+      <kw name="E o indicador de pH deve estar visível" library="dashboard_qualidade" type="kw">
+        <status status="PASS" starttime="20260603 10:15:03.400" endtime="20260603 10:15:03.700"/>
+      </kw>
+      <status status="PASS" starttime="20260603 10:15:01.000" endtime="20260603 10:15:03.700"/>
+    </test>
+    <test id="s1-t2" name="CT02 - Deve exibir alerta vermelho para região com parâmetros críticos">
+      <kw name="Dado que o usuario seleciona a regiao" library="dashboard_qualidade" type="kw">
+        <arg>Região Crítica Teste</arg>
+        <status status="PASS" starttime="20260603 10:15:04.200" endtime="20260603 10:15:05.500"/>
+      </kw>
+      <kw name="Quando o dashboard for carregado" library="dashboard_qualidade" type="kw">
+        <status status="PASS" starttime="20260603 10:15:05.500" endtime="20260603 10:15:06.000"/>
+      </kw>
+      <kw name="Entao o indicador de qualidade deve ser" library="dashboard_qualidade" type="kw">
+        <arg>CRÍTICO</arg>
+        <status status="PASS" starttime="20260603 10:15:06.000" endtime="20260603 10:15:06.400"/>
+      </kw>
+      <kw name="E um pop-up de alerta deve ser exibido" library="dashboard_qualidade" type="kw">
+        <status status="PASS" starttime="20260603 10:15:06.400" endtime="20260603 10:15:07.000"/>
+      </kw>
+      <status status="PASS" starttime="20260603 10:15:04.200" endtime="20260603 10:15:07.000"/>
+    </test>
+    <test id="s1-t3" name="CT03 - Deve exibir mensagem quando região não possui dados">
+      <kw name="Dado que o usuario seleciona a regiao" library="dashboard_qualidade" type="kw">
+        <arg>Zona Rural Sem Dados</arg>
+        <status status="PASS" starttime="20260603 10:15:07.500" endtime="20260603 10:15:08.500"/>
+      </kw>
+      <kw name="Quando o dashboard for carregado" library="dashboard_qualidade" type="kw">
+        <status status="PASS" starttime="20260603 10:15:08.500" endtime="20260603 10:15:09.000"/>
+      </kw>
+      <kw name="Entao a mensagem de ausência de dados deve ser exibida" library="dashboard_qualidade" type="kw">
+        <status status="PASS" starttime="20260603 10:15:09.000" endtime="20260603 10:15:09.500"/>
+      </kw>
+      <status status="PASS" starttime="20260603 10:15:07.500" endtime="20260603 10:15:09.500"/>
+    </test>
+    <status status="PASS" starttime="20260603 10:15:00.000" endtime="20260603 10:15:11.000"/>
+  </suite>
+  <statistics>
+    <total>
+      <stat pass="3" fail="0" skip="0">All Tests</stat>
+    </total>
+    <suite>
+      <stat pass="3" fail="0" skip="0" id="s1" name="Dashboard Qualidade">Dashboard Qualidade</stat>
+    </suite>
+  </statistics>
+  <errors/>
+</robot>
