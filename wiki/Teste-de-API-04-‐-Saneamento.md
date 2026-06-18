@@ -79,6 +79,8 @@
 
 **Caso de Teste 02 - Sem localização**
 
+*Headers:* Authorization: Bearer {{jwt_token_morador}}
+
 *Body (Request):*
 
  {
@@ -96,6 +98,48 @@
  pm.test("Mensagem de erro sobre localização", function () {
  var json = pm.response.json();
  pm.expect(json.mensagem).to.include("Localização obrigatória");
+ });
+
+**Caso de Teste 03 - Sem descrição**
+
+*Headers:* Authorization: Bearer {{jwt_token_morador}}
+
+*Body (Request):*
+
+ {
+ "tipo_problema": "FALTA_COLETA",
+ "descricao": "",
+ "latitude": -15.7890,
+ "longitude": -48.1234
+ }
+
+*Testes (Postman - Tests):*
+
+ pm.test("Status code deve ser 400", function () {
+ pm.response.to.have.status(400);
+ });
+ pm.test("Mensagem de erro sobre descrição", function () {
+ var json = pm.response.json();
+ pm.expect(json.mensagem).to.include("Descrição obrigatória");
+ });
+
+**Caso de Teste 04 - Sem autenticação**
+
+*Headers:* (sem Authorization)
+
+*Body (Request):*
+
+ {
+ "tipo_problema": "VAZAMENTO",
+ "descricao": "Vazamento na calçada.",
+ "latitude": -15.7890,
+ "longitude": -48.1234
+ }
+
+*Testes (Postman - Tests):*
+
+ pm.test("Status code deve ser 401", function () {
+ pm.response.to.have.status(401);
  });
 
 ## 4. Relatório de Execução de Testes

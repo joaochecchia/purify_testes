@@ -6,28 +6,40 @@
 
 ### 1. Regras e Modelagem (EP)
 
-**Variável analisada:** Credenciais de autenticação (e-mail + senha)
+A técnica de Partição de Equivalência é aplicada separadamente para cada variável de entrada independente do formulário de autenticação.
 
-**Partições de Equivalência:**
+**Variável 1: E-mail**
 
 | Índice | Partição | Descrição | Resultado Esperado |
 | :--- | :--- | :--- | :--- |
-| P1 | Credenciais válidas | E-mail e senha correspondentes a um usuário cadastrado no banco de dados | Autenticação realizada com sucesso (HTTP 200 + token JWT) |
-| P2 | E-mail inexistente | E-mail não cadastrado no sistema | Credenciais inválidas (HTTP 401) |
-| P3 | Senha incorreta | E-mail válido, mas senha errada | Credenciais inválidas (HTTP 401) |
-| P4 | E-mail formato inválido | E-mail sem @ ou domínio inválido | Erro de validação (HTTP 400) |
+| PE1 | E-mail válido e cadastrado | Endereço com formato correto e existente no banco de dados | Prossegue para validação de senha |
+| PE2 | E-mail válido, não cadastrado | Endereço com formato correto, mas não registrado no sistema | HTTP 401 — Credenciais inválidas |
+| PE3 | E-mail com formato inválido | Ausência de "@", domínio ausente ou caracteres proibidos | HTTP 400 — Formato de e-mail inválido |
+| PE4 | E-mail vazio | Campo submetido sem valor | HTTP 400 — Campo obrigatório |
+
+**Variável 2: Senha**
+
+| Índice | Partição | Descrição | Resultado Esperado |
+| :--- | :--- | :--- | :--- |
+| PS1 | Senha correta | Senha correspondente ao e-mail cadastrado | Autenticação realizada (HTTP 200 + token JWT) |
+| PS2 | Senha incorreta | Senha que não corresponde ao e-mail cadastrado | HTTP 401 — Credenciais inválidas |
+| PS3 | Senha vazia | Campo submetido sem valor | HTTP 400 — Campo obrigatório |
 
 ### 2. Execução do Teste
 
-| CT | Dados de Entrada | Cobre | Resultado Esperado |
-| :--- | :--- | :--- | :--- |
-| CT1 | email: "joao@purify.com", senha: "Purify@2026" | P1 | HTTP 200 + token JWT retornado |
-| CT2 | email: "inexistente@purify.com", senha: "qualquer" | P2 | HTTP 401 — Credenciais inválidas |
-| CT3 | email: "joao@purify.com", senha: "senhaerrada" | P3 | HTTP 401 — Credenciais inválidas |
-| CT4 | email: "joaopurify.com", senha: "Purify@2026" | P4 | HTTP 400 — Formato de e-mail inválido |
+Os casos de teste combinam as partições das duas variáveis, priorizando a cobertura de todos os grupos relevantes.
+
+| CT | E-mail (entrada) | Senha (entrada) | Cobre | Resultado Esperado |
+| :--- | :--- | :--- | :--- | :--- |
+| CT1 | joao@purify.com | Purify@2026 | PE1 + PS1 | HTTP 200 — Token JWT retornado |
+| CT2 | inexistente@purify.com | Purify@2026 | PE2 + PS1 | HTTP 401 — Credenciais inválidas |
+| CT3 | joao@purify.com | senhaerrada | PE1 + PS2 | HTTP 401 — Credenciais inválidas |
+| CT4 | joaopurify.com | Purify@2026 | PE3 | HTTP 400 — Formato de e-mail inválido |
+| CT5 | | Purify@2026 | PE4 | HTTP 400 — Campo obrigatório |
+| CT6 | joao@purify.com | | PS3 | HTTP 400 — Campo obrigatório |
 
 ### 3. Taxa de Cobertura (TC)
 
-* Partições testadas: P1 (CT1), P2 (CT2), P3 (CT3), P4 (CT4).
-* Total de partições: 4
-* **TC = 4 / 4 = 100%**
+* Partições testadas: PE1 (CT1), PE2 (CT2), PE3 (CT4), PE4 (CT5), PS1 (CT1, CT2), PS2 (CT3), PS3 (CT6).
+* Total de partições: 7 (PE1 a PE4 + PS1 a PS3)
+* **TC = 7 / 7 = 100%**

@@ -6,11 +6,12 @@
 
 **Tabela de Decisão — Validação e Persistência de Dados Hídricos**
 
-| Condição / Regra | CT01 | CT02 | CT03 |
-| :--- | :--- | :--- | :--- |
-| R1 - Perfil autorizado (ONG/Gov.) | S | N | S |
-| R2 - Dados válidos (pH, turbidez, coliformes) | S | S | N |
-| **Resultado esperado** | Dados salvos (201) | Acesso negado (403) | Dados rejeitados (400) |
+| Condição / Regra | CT01 | CT02 | CT03 | CT04 |
+| :--- | :--- | :--- | :--- | :--- |
+| R1 - Perfil autorizado (ONG/Gov.) | S | S | S | N |
+| R2 - Dados válidos (pH, turbidez, coliformes) | S | S | N | - |
+| R3 - Parâmetros dentro dos limites seguros (RN-004) | S | N | - | - |
+| **Resultado esperado** | 201 — Salvo sem alerta | 201 — Salvo com alerta | 400 — Rejeitado | 403 — Acesso negado |
 
 ## 2. Documentação da API
 

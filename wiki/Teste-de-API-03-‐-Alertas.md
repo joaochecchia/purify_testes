@@ -92,6 +92,34 @@
  pm.expect(json.alertas).to.be.an('array').that.is.empty;
  });
 
+**Caso de Teste 03 - Região inválida**
+
+*URL:* `GET http://localhost:3000/alertas?id_regiao=9999`
+
+*Headers:* Authorization: Bearer {{jwt_token}}
+
+*Testes (Postman - Tests):*
+
+ pm.test("Status code deve ser 404", function () {
+ pm.response.to.have.status(404);
+ });
+ pm.test("Mensagem de erro correta", function () {
+ var json = pm.response.json();
+ pm.expect(json.mensagem).to.include("Região não encontrada");
+ });
+
+**Caso de Teste 04 - Sem autenticação**
+
+*URL:* `GET http://localhost:3000/alertas?id_regiao=1`
+
+*Headers:* (sem Authorization)
+
+*Testes (Postman - Tests):*
+
+ pm.test("Status code deve ser 401", function () {
+ pm.response.to.have.status(401);
+ });
+
 ## 4. Relatório de Execução de Testes
 
 **Ambiente de testes:**
