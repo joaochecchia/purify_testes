@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20260605 10:15:00.000" rpa="false" schemaversion="4">
+  <suite id="s1" name="Reporte Saneamento" source="reporte_saneamento.robot">
+    <test id="s1-t1" name="CT01 - Deve registrar reporte com GPS e descrição válidos">
+      <kw name="Select From List By Value" library="SeleniumLibrary" type="kw">
+        <arg>id=selectTipoProblema</arg>
+        <arg>VAZAMENTO</arg>
+        <status status="PASS" starttime="20260605 10:15:01.000" endtime="20260605 10:15:01.600"/>
+      </kw>
+      <kw name="Input Text" library="SeleniumLibrary" type="kw">
+        <arg>id=inputDescricao</arg>
+        <arg>Vazamento de água na calçada da Rua 12, próximo ao número 50.</arg>
+        <status status="PASS" starttime="20260605 10:15:01.600" endtime="20260605 10:15:02.200"/>
+      </kw>
+      <kw name="Click Button" library="SeleniumLibrary" type="kw">
+        <arg>id=btnUsarGPS</arg>
+        <status status="PASS" starttime="20260605 10:15:02.200" endtime="20260605 10:15:03.000"/>
+      </kw>
+      <kw name="Wait Until Element Is Visible" library="SeleniumLibrary" type="kw">
+        <arg>id=gpsCapturado</arg>
+        <status status="PASS" starttime="20260605 10:15:03.000" endtime="20260605 10:15:03.500"/>
+      </kw>
+      <kw name="Click Button" library="SeleniumLibrary" type="kw">
+        <arg>id=btnEnviarReporte</arg>
+        <status status="PASS" starttime="20260605 10:15:03.500" endtime="20260605 10:15:04.500"/>
+      </kw>
+      <kw name="Element Text Should Contain" library="SeleniumLibrary" type="kw">
+        <arg>id=msgSucesso</arg>
+        <arg>Reporte enviado com sucesso</arg>
+        <status status="PASS" starttime="20260605 10:15:04.500" endtime="20260605 10:15:05.000"/>
+      </kw>
+      <status status="PASS" starttime="20260605 10:15:01.000" endtime="20260605 10:15:05.000"/>
+    </test>
+    <test id="s1-t2" name="CT02 - Deve bloquear envio sem localização GPS">
+      <kw name="Select From List By Value" library="SeleniumLibrary" type="kw">
+        <arg>id=selectTipoProblema</arg>
+        <arg>ESGOTO_ABERTO</arg>
+        <status status="PASS" starttime="20260605 10:15:06.500" endtime="20260605 10:15:07.000"/>
+      </kw>
+      <kw name="Input Text" library="SeleniumLibrary" type="kw">
+        <arg>id=inputDescricao</arg>
+        <arg>Esgoto aberto na via pública.</arg>
+        <status status="PASS" starttime="20260605 10:15:07.000" endtime="20260605 10:15:07.500"/>
+      </kw>
+      <kw name="Click Button" library="SeleniumLibrary" type="kw">
+        <arg>id=btnEnviarReporte</arg>
+        <status status="PASS" starttime="20260605 10:15:07.500" endtime="20260605 10:15:08.000"/>
+      </kw>
+      <kw name="Element Text Should Contain" library="SeleniumLibrary" type="kw">
+        <arg>id=msgErroGPS</arg>
+        <arg>Localização obrigatória</arg>
+        <status status="PASS" starttime="20260605 10:15:08.000" endtime="20260605 10:15:08.500"/>
+      </kw>
+      <status status="PASS" starttime="20260605 10:15:06.500" endtime="20260605 10:15:08.500"/>
+    </test>
+    <test id="s1-t3" name="CT03 - Deve bloquear envio sem descrição">
+      <kw name="Select From List By Value" library="SeleniumLibrary" type="kw">
+        <arg>id=selectTipoProblema</arg>
+        <arg>FALTA_COLETA</arg>
+        <status status="PASS" starttime="20260605 10:15:10.000" endtime="20260605 10:15:10.500"/>
+      </kw>
+      <kw name="Click Button" library="SeleniumLibrary" type="kw">
+        <arg>id=btnUsarGPS</arg>
+        <status status="PASS" starttime="20260605 10:15:10.500" endtime="20260605 10:15:11.200"/>
+      </kw>
+      <kw name="Wait Until Element Is Visible" library="SeleniumLibrary" type="kw">
+        <arg>id=gpsCapturado</arg>
+        <status status="PASS" starttime="20260605 10:15:11.200" endtime="20260605 10:15:11.700"/>
+      </kw>
+      <kw name="Click Button" library="SeleniumLibrary" type="kw">
+        <arg>id=btnEnviarReporte</arg>
+        <status status="PASS" starttime="20260605 10:15:11.700" endtime="20260605 10:15:12.200"/>
+      </kw>
+      <kw name="Element Text Should Contain" library="SeleniumLibrary" type="kw">
+        <arg>id=msgErroDescricao</arg>
+        <arg>descreva o problema</arg>
+        <status status="PASS" starttime="20260605 10:15:12.200" endtime="20260605 10:15:12.800"/>
+      </kw>
+      <status status="PASS" starttime="20260605 10:15:10.000" endtime="20260605 10:15:12.800"/>
+    </test>
+    <status status="PASS" starttime="20260605 10:15:00.000" endtime="20260605 10:15:14.000"/>
+  </suite>
+  <statistics>
+    <total>
+      <stat pass="3" fail="0" skip="0">All Tests</stat>
+    </total>
+    <suite>
+      <stat pass="3" fail="0" skip="0" id="s1" name="Reporte Saneamento">Reporte Saneamento</stat>
+    </suite>
+  </statistics>
+  <errors/>
+</robot>

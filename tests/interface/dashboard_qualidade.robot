@@ -12,21 +12,28 @@ ${BTN_PESQUISAR}    id=btnPesquisar
 ${INDICADOR_PH}     id=indicadorPH
 ${INDICADOR_COR}    id=statusQualidade
 ${MSG_SEM_DADOS}    id=msgSemDados
+${POPUP_ALERTA}     id=popupAlerta
 
 *** Test Cases ***
 CT01 - Deve exibir dashboard verde para região com dados seguros
+    [Documentation]    Valida que o indicador de qualidade exibe SEGURO e o pH está visível para região com dados dentro dos limites
+    [Tags]             dashboard    seguro    qualidade
     Dado que o usuario seleciona a regiao    Asa Norte
     Quando o dashboard for carregado
     Entao o indicador de qualidade deve ser    SEGURO
     E o indicador de pH deve estar visível
 
 CT02 - Deve exibir alerta vermelho para região com parâmetros críticos
+    [Documentation]    Valida que o indicador exibe CRÍTICO e o pop-up de alerta é exibido quando parâmetros ultrapassam os limites (RN-004)
+    [Tags]             dashboard    critico    alerta    rn-004
     Dado que o usuario seleciona a regiao    Região Crítica Teste
     Quando o dashboard for carregado
     Entao o indicador de qualidade deve ser    CRÍTICO
     E um pop-up de alerta deve ser exibido
 
 CT03 - Deve exibir mensagem quando região não possui dados
+    [Documentation]    Valida a mensagem de ausência de dados para região sem registros cadastrados (RF-10)
+    [Tags]             dashboard    sem-dados    rf-10
     Dado que o usuario seleciona a regiao    Zona Rural Sem Dados
     Quando o dashboard for carregado
     Entao a mensagem de ausência de dados deve ser exibida
@@ -59,7 +66,7 @@ E o indicador de pH deve estar visível
     Element Should Be Visible    ${INDICADOR_PH}
 
 E um pop-up de alerta deve ser exibido
-    Wait Until Element Is Visible    id=popupAlerta    timeout=3s
+    Wait Until Element Is Visible    ${POPUP_ALERTA}    timeout=3s
 
 Entao a mensagem de ausência de dados deve ser exibida
     Wait Until Element Is Visible    ${MSG_SEM_DADOS}    timeout=5s

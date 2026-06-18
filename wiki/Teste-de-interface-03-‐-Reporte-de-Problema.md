@@ -16,6 +16,8 @@
 
 **Robot Framework com SeleniumLibrary**
 
+**Arquivo do script:** [`tests/interface/reporte_saneamento.robot`](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reporte_saneamento.robot)
+
 **Suite de Teste:** `reporte_saneamento.robot`
 
  ***Settings ***
@@ -106,5 +108,13 @@
 | Total de testes | Aprovados | Reprovados |
 | :--- | :--- | :--- |
 | 3 | 3 | 0 |
+
+**Arquivos de Evidência da Execução**
+
+| Arquivo | Descrição | Link |
+| :--- | :--- | :--- |
+| report.html | Resumo executivo da execução dos testes | [Abrir report.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/reporte_saneamento/report.html) |
+| log.html | Log detalhado da execução dos testes | [Abrir log.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/reporte_saneamento/log.html) |
+| output.xml | Resultado bruto da execução dos testes | [Abrir output.xml](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/reporte_saneamento/output.xml) |
 
 **Conclusão:** Os testes da tela de reporte validaram a obrigatoriedade de localização GPS (RN-007), a validação de descrição (RF-23) e o fluxo de sucesso de registro de ocorrência (RF-24).

@@ -16,6 +16,8 @@
 
 **Robot Framework com SeleniumLibrary**
 
+**Arquivo do script:** [`tests/interface/historico_dados.robot`](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/historico_dados.robot)
+
 **Suite de Teste:** `historico_dados.robot`
 
  ***Settings ***
@@ -104,5 +106,13 @@
 | Total de testes | Aprovados | Reprovados |
 | :--- | :--- | :--- |
 | 3 | 3 | 0 |
+
+**Arquivos de Evidência da Execução**
+
+| Arquivo | Descrição | Link |
+| :--- | :--- | :--- |
+| report.html | Resumo executivo da execução dos testes | [Abrir report.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/historico_dados/report.html) |
+| log.html | Log detalhado da execução dos testes | [Abrir log.html](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/historico_dados/log.html) |
+| output.xml | Resultado bruto da execução dos testes | [Abrir output.xml](https://github.com/joaochecchia/purify_testes/blob/main/tests/interface/reports/historico_dados/output.xml) |
 
 **Conclusão:** Os testes da tela de histórico validaram a ordenação cronológica decrescente obrigatória (RN-005), a exibição de mensagem para regiões sem dados (RF-10) e o isolamento correto de dados por região (RF-08).

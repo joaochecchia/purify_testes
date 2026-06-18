@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Robot Framework — Log de Execução: Histórico de Dados</title>
+<style>
+  body { font-family: monospace; margin: 0; background: #1e1e1e; color: #d4d4d4; }
+  header { background: #252526; border-bottom: 1px solid #3c3c3c; padding: 12px 20px; }
+  header h1 { margin: 0; font-size: 1.1rem; color: #ccc; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .suite { margin-bottom: 24px; }
+  .suite-hdr { background: #252526; border-left: 4px solid #4caf50; padding: 8px 14px; font-size: 0.95rem; color: #9cdcfe; }
+  .test { margin: 8px 0 8px 20px; border-left: 2px solid #3c3c3c; padding-left: 12px; }
+  .test-hdr { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
+  .test-name { color: #dcdcaa; font-size: 0.9rem; }
+  .tag-pass { background: #4caf50; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; }
+  .dur { color: #777; font-size: 0.78rem; }
+  .kw { margin: 4px 0 4px 20px; font-size: 0.8rem; color: #9cdcfe; }
+  .kw-arg { color: #ce9178; }
+  .kw-pass { color: #4caf50; }
+  .time { color: #555; font-size: 0.75rem; margin-right: 8px; }
+  .divider { border: none; border-top: 1px solid #3c3c3c; margin: 12px 0; }
+  footer { text-align: center; color: #555; font-size: 0.75rem; padding: 20px; }
+</style>
+</head>
+<body>
+<header><h1>Robot Framework — Log de Execução: Histórico de Dados</h1></header>
+<main>
+  <div class="suite">
+    <div class="suite-hdr">SUITE: Histórico Dados &nbsp;|&nbsp; historico_dados.robot &nbsp;|&nbsp; <span style="color:#4caf50">PASS</span> &nbsp;|&nbsp; 12.0 s</div>
+
+    <div class="test">
+      <div class="test-hdr">
+        <span class="test-name">CT01 — Deve exibir histórico em ordem cronológica decrescente</span>
+        <span class="tag-pass">PASS</span>
+        <span class="dur">4.0 s</span>
+      </div>
+      <div class="kw"><span class="time">09:00:01.000</span>KW &nbsp;<span class="kw-arg">Select From List By Label</span> &nbsp;| selectRegiao | Asa Norte &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:01.500</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnConsultar &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:02.200</span>KW &nbsp;<span class="kw-arg">Wait Until Element Is Visible</span> &nbsp;| listaHistorico &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:02.800</span>KW &nbsp;<span class="kw-arg">Get Text</span> &nbsp;| #listaHistorico .item-historico:first-child .data-coleta &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:03.200</span>KW &nbsp;<span class="kw-arg">Should Be True</span> &nbsp;| data_primeiro >= data_segundo &nbsp;<span class="kw-pass">PASS</span></div>
+    </div>
+    <hr class="divider">
+
+    <div class="test">
+      <div class="test-hdr">
+        <span class="test-name">CT02 — Deve exibir mensagem para região sem dados</span>
+        <span class="tag-pass">PASS</span>
+        <span class="dur">4.0 s</span>
+      </div>
+      <div class="kw"><span class="time">09:00:05.000</span>KW &nbsp;<span class="kw-arg">Select From List By Label</span> &nbsp;| selectRegiao | Zona Rural Sem Dados &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:05.500</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnConsultar &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:06.500</span>KW &nbsp;<span class="kw-arg">Wait Until Element Is Visible</span> &nbsp;| msgSemDados &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:07.200</span>KW &nbsp;<span class="kw-arg">Element Text Should Contain</span> &nbsp;| msgSemDados | Não existem dados registrados &nbsp;<span class="kw-pass">PASS</span></div>
+    </div>
+    <hr class="divider">
+
+    <div class="test">
+      <div class="test-hdr">
+        <span class="test-name">CT03 — Deve filtrar dados corretamente por região selecionada</span>
+        <span class="tag-pass">PASS</span>
+        <span class="dur">3.0 s</span>
+      </div>
+      <div class="kw"><span class="time">09:00:09.000</span>KW &nbsp;<span class="kw-arg">Select From List By Label</span> &nbsp;| selectRegiao | Taguatinga &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:09.500</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnConsultar &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:10.200</span>KW &nbsp;<span class="kw-arg">Wait Until Element Is Visible</span> &nbsp;| listaHistorico &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:10.800</span>KW &nbsp;<span class="kw-arg">Get Text</span> &nbsp;| nomeRegiaoAtiva &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">09:00:11.200</span>KW &nbsp;<span class="kw-arg">Should Be Equal</span> &nbsp;| Taguatinga | Taguatinga &nbsp;<span class="kw-pass">PASS</span></div>
+    </div>
+  </div>
+</main>
+<footer>Gerado por Robot Framework 7.0 — 06/06/2026 09:00:12</footer>
+</body>
+</html>

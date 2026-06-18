@@ -5,6 +5,7 @@ Suite Teardown    E fecha o navegador
 
 *** Variables ***
 ${URL}              http://localhost:5173/login
+${URL_DASHBOARD}    http://localhost:5173/dashboard
 ${BROWSER}          chrome
 ${INPUT_EMAIL}      id=email
 ${INPUT_SENHA}      id=senha
@@ -14,6 +15,8 @@ ${NAV_LOGOUT}       id=navLogout
 
 *** Test Cases ***
 CT01 - Deve realizar login com dados válidos
+    [Documentation]    Valida fluxo de login com credenciais corretas e redirecionamento ao dashboard
+    [Tags]             login    sucesso    autenticacao
     Dado que o usuario informa o email    daniel@purify.com
     E informa a senha                     Purify@2026
     Quando solicitar o login
@@ -21,6 +24,8 @@ CT01 - Deve realizar login com dados válidos
     E o usuario faz logout
 
 CT02 - Deve exibir erro com e-mail não cadastrado
+    [Documentation]    Valida mensagem de erro quando o e-mail informado não está cadastrado
+    [Tags]             login    erro    email
     [Setup]    Go To    ${URL}
     Dado que o usuario informa o email    naoexiste@purify.com
     E informa a senha                     Purify@2026
@@ -28,6 +33,8 @@ CT02 - Deve exibir erro com e-mail não cadastrado
     Entao o sistema deve apresentar a mensagem de erro    Credenciais inválidas
 
 CT03 - Deve exibir erro com senha incorreta
+    [Documentation]    Valida mensagem de erro quando a senha informada não corresponde ao e-mail
+    [Tags]             login    erro    senha
     [Setup]    Go To    ${URL}
     Dado que o usuario informa o email    daniel@purify.com
     E informa a senha                     senhaerrada
@@ -54,6 +61,7 @@ Quando solicitar o login
 
 Entao o sistema deve acessar o dashboard
     Wait Until Element Is Visible    ${NAV_LOGOUT}    timeout=5s
+    Location Should Contain          /dashboard
 
 Entao o sistema deve apresentar a mensagem de erro
     [Arguments]    ${mensagem}

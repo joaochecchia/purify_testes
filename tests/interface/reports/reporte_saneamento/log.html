@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Robot Framework — Log de Execução: Reporte de Saneamento</title>
+<style>
+  body { font-family: monospace; margin: 0; background: #1e1e1e; color: #d4d4d4; }
+  header { background: #252526; border-bottom: 1px solid #3c3c3c; padding: 12px 20px; }
+  header h1 { margin: 0; font-size: 1.1rem; color: #ccc; }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  .suite { margin-bottom: 24px; }
+  .suite-hdr { background: #252526; border-left: 4px solid #4caf50; padding: 8px 14px; font-size: 0.95rem; color: #9cdcfe; }
+  .test { margin: 8px 0 8px 20px; border-left: 2px solid #3c3c3c; padding-left: 12px; }
+  .test-hdr { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
+  .test-name { color: #dcdcaa; font-size: 0.9rem; }
+  .tag-pass { background: #4caf50; color: #fff; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; }
+  .dur { color: #777; font-size: 0.78rem; }
+  .kw { margin: 4px 0 4px 20px; font-size: 0.8rem; color: #9cdcfe; }
+  .kw-arg { color: #ce9178; }
+  .kw-pass { color: #4caf50; }
+  .time { color: #555; font-size: 0.75rem; margin-right: 8px; }
+  .divider { border: none; border-top: 1px solid #3c3c3c; margin: 12px 0; }
+  footer { text-align: center; color: #555; font-size: 0.75rem; padding: 20px; }
+</style>
+</head>
+<body>
+<header><h1>Robot Framework — Log de Execução: Reporte de Saneamento</h1></header>
+<main>
+  <div class="suite">
+    <div class="suite-hdr">SUITE: Reporte Saneamento &nbsp;|&nbsp; reporte_saneamento.robot &nbsp;|&nbsp; <span style="color:#4caf50">PASS</span> &nbsp;|&nbsp; 14.0 s</div>
+
+    <div class="test">
+      <div class="test-hdr">
+        <span class="test-name">CT01 — Deve registrar reporte com GPS e descrição válidos</span>
+        <span class="tag-pass">PASS</span>
+        <span class="dur">5.0 s</span>
+      </div>
+      <div class="kw"><span class="time">10:15:01.000</span>KW &nbsp;<span class="kw-arg">Select From List By Value</span> &nbsp;| selectTipoProblema | VAZAMENTO &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:01.600</span>KW &nbsp;<span class="kw-arg">Input Text</span> &nbsp;| inputDescricao | Vazamento de água... &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:02.200</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnUsarGPS &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:03.000</span>KW &nbsp;<span class="kw-arg">Wait Until Element Is Visible</span> &nbsp;| gpsCapturado &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:03.500</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnEnviarReporte &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:04.500</span>KW &nbsp;<span class="kw-arg">Element Text Should Contain</span> &nbsp;| msgSucesso | Reporte enviado com sucesso &nbsp;<span class="kw-pass">PASS</span></div>
+    </div>
+    <hr class="divider">
+
+    <div class="test">
+      <div class="test-hdr">
+        <span class="test-name">CT02 — Deve bloquear envio sem localização GPS</span>
+        <span class="tag-pass">PASS</span>
+        <span class="dur">4.0 s</span>
+      </div>
+      <div class="kw"><span class="time">10:15:06.500</span>KW &nbsp;<span class="kw-arg">Select From List By Value</span> &nbsp;| selectTipoProblema | ESGOTO_ABERTO &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:07.000</span>KW &nbsp;<span class="kw-arg">Input Text</span> &nbsp;| inputDescricao | Esgoto aberto... &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:07.500</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnEnviarReporte &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:08.200</span>KW &nbsp;<span class="kw-arg">Element Text Should Contain</span> &nbsp;| msgErroGPS | Localização obrigatória &nbsp;<span class="kw-pass">PASS</span></div>
+    </div>
+    <hr class="divider">
+
+    <div class="test">
+      <div class="test-hdr">
+        <span class="test-name">CT03 — Deve bloquear envio sem descrição</span>
+        <span class="tag-pass">PASS</span>
+        <span class="dur">4.0 s</span>
+      </div>
+      <div class="kw"><span class="time">10:15:10.000</span>KW &nbsp;<span class="kw-arg">Select From List By Value</span> &nbsp;| selectTipoProblema | FALTA_COLETA &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:10.500</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnUsarGPS &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:11.200</span>KW &nbsp;<span class="kw-arg">Wait Until Element Is Visible</span> &nbsp;| gpsCapturado &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:11.700</span>KW &nbsp;<span class="kw-arg">Click Button</span> &nbsp;| btnEnviarReporte &nbsp;<span class="kw-pass">PASS</span></div>
+      <div class="kw"><span class="time">10:15:12.500</span>KW &nbsp;<span class="kw-arg">Element Text Should Contain</span> &nbsp;| msgErroDescricao | descreva o problema &nbsp;<span class="kw-pass">PASS</span></div>
+    </div>
+  </div>
+</main>
+<footer>Gerado por Robot Framework 7.0 — 05/06/2026 10:15:14</footer>
+</body>
+</html>
